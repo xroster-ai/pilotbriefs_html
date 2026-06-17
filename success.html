@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you — PilotBrief</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M21 15.5v-1.6l-7.5-4.6V4.2a1.5 1.5 0 0 0-3 0v5.1L3 13.9v1.6l7.5-2.2v3.9l-2 1.4v1.2l3.5-1 3.5 1v-1.2l-2-1.4v-3.9z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root{--blue:#2563eb;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(1000px 520px at 70% -10%,#173a6b,#0b1f3a 60%);color:#eaf2ff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .card{max-width:600px;width:100%;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:40px 34px;}
+  .tick{width:60px;height:60px;border-radius:50%;background:#16a34a;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:30px;}
+  h1{font-size:1.6rem;margin:.2rem 0 .5rem;color:#fff;}
+  p{color:#c4d6f0;line-height:1.6;}
+  .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;margin:16px 0;text-align:left;}
+  .keyrow{display:flex;align-items:center;gap:10px;justify-content:space-between;background:#0b1f3a;border:1px solid rgba(120,170,230,.25);border-radius:10px;padding:10px 12px;margin:8px 0;}
+  .keyrow code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#cfe3ff;font-size:.92rem;word-break:break-all;}
+  .copy{flex:none;background:#fff;color:#0b1f3a;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:.82rem;}
+  .dl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0;}
+  a.btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b1f3a;font-weight:700;text-decoration:none;border-radius:11px;padding:12px 20px;}
+  a.btn.primary{background:var(--blue);color:#fff;}
+  a.link{color:#cfe0f5;}
+  .muted{color:#9fb6d6;font-size:.85rem;margin-top:16px;}
+  .label{color:#9fb6d6;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin:4px 0;}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="tick">✓</div>
+    <h1>Payment complete — welcome aboard!</h1>
+    <p>Thank you for getting <strong>PilotBrief</strong>. We've also emailed everything below to your inbox.</p>
+
+    <div id="loading" class="box"><span class="spin"></span> &nbsp;Preparing your licence key &amp; downloads…</div>
+
+    <div id="result" style="display:none">
+      <div class="box">
+        <div class="label">Your licence key<span id="keyPlural"></span></div>
+        <div id="keys"></div>
+        <p style="margin:6px 0 0;color:#9fb6d6;font-size:.85rem">Each key activates one device. In the app: <strong>Settings → Activate licence</strong>.</p>
+      </div>
+      <div class="label">Download the app</div>
+      <div class="dl">
+        <a id="dlMac" class="btn primary" href="#"> Download for Mac</a>
+        <a id="dlWin" class="btn" href="#">⊞ Download for Windows</a>
+      </div>
+      <p class="muted">macOS first launch: if it says "PilotBrief is damaged", open the included <strong>READ ME FIRST</strong> in the disk image, or run once in Terminal:<br><code style="color:#cfe3ff">xattr -dr com.apple.quarantine /Applications/PilotBrief.app</code></p>
+    </div>
+
+    <div id="fallback" class="box" style="display:none">
+      <p style="margin:0 0 6px"><strong>📧 Check your email.</strong> Your licence key and the Mac &amp; Windows download links are on their way to the address you used at checkout.</p>
+      <p style="margin:0;color:#9fb6d6;font-size:.9rem">Don't see it? Check spam/promotions, or email us and we'll resend it.</p>
+    </div>
+
+    <div style="margin-top:18px"><a class="link" href="/">← Back to PilotBrief</a></div>
+    <div class="muted">Questions or didn't receive your key? <a class="link" href="mailto:support@xroster.com">support@xroster.com</a></div>
+  </div>
+
+<script>
+  var KEYS_URL = "https://www.xroster.com/ai/pilotbrief/api/launch-keys";
+  function q(id){return document.getElementById(id);}
+  function showFallback(){ q('loading').style.display='none'; q('fallback').style.display='block'; }
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+
+  (async function(){
+    var sid = new URLSearchParams(location.search).get('session_id');
+    if(!sid){ showFallback(); return; }
+    try{
+      // Brief retry loop in case the webhook is a beat behind.
+      var data=null;
+      for(var i=0;i<4;i++){
+        var r=await fetch(KEYS_URL+'?session_id='+encodeURIComponent(sid));
+        if(r.status===202){ await new Promise(function(res){setTimeout(res,1500);}); continue; }
+        data=await r.json(); break;
+      }
+      if(!data || !data.keys || !data.keys.length){ showFallback(); return; }
+
+      var html='';
+      data.keys.forEach(function(k){
+        html+='<div class="keyrow"><code>'+esc(k)+'</code><button class="copy" data-k="'+esc(k)+'">Copy</button></div>';
+      });
+      q('keys').innerHTML=html;
+      q('keyPlural').textContent = data.keys.length>1 ? 's' : '';
+      if(data.downloads){
+        if(data.downloads.mac) q('dlMac').href=data.downloads.mac; else q('dlMac').style.display='none';
+        if(data.downloads.win) q('dlWin').href=data.downloads.win; else q('dlWin').style.display='none';
+      }
+      q('loading').style.display='none';
+      q('result').style.display='block';
+
+      document.addEventListener('click',function(e){
+        var b=e.target.closest('.copy'); if(!b) return;
+        navigator.clipboard.writeText(b.getAttribute('data-k')).then(function(){
+          var t=b.textContent; b.textContent='Copied!'; setTimeout(function(){b.textContent=t;},1400);
+        });
+      });
+    }catch(e){ showFallback(); }
+  })();
+</script>
+</body>
+</html>

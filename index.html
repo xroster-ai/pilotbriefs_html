@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PilotBrief — your private AI co-pilot for the flight deck</title>
+<meta name="description" content="Ask your FCOM, QRH, FCTM, OM & SOPs in plain English and get the exact procedure or limit back — verbatim, cited to the page. Scenario decision-support, hands-free voice, and fully offline AI. One-time price, runs on your own Mac or PC.">
+<meta property="og:title" content="PilotBrief — your private AI co-pilot for the flight deck">
+<meta property="og:description" content="Stop scrolling 4,000-page manuals. Just ask. Grounded, page-cited answers from your own manuals — plus scenario decision-support, voice, and offline AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilotbriefs.com">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M21 15.5v-1.6l-7.5-4.6V4.2a1.5 1.5 0 0 0-3 0v5.1L3 13.9v1.6l7.5-2.2v3.9l-2 1.4v1.2l3.5-1 3.5 1v-1.2l-2-1.4v-3.9z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root{--navy:#0b1f3a;--blue:#2563eb;--sky:#4da3ff;--ink:#0e1626;--muted:#5b6b82;--line:#e6eaf0;--bg:#f7f9fc;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:var(--blue);text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:600;font-size:1rem;cursor:pointer;border:0;transition:transform .12s,box-shadow .12s;}
+  .btn-light{background:#fff;color:var(--navy);} .btn-light:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.18);}
+  .btn-primary{background:var(--blue);color:#fff;} .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,99,235,.32);}
+  .btn-lg{padding:15px 28px;font-size:1.05rem;}
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--navy);font-size:1.12rem;}
+  .brand .mk{width:28px;height:28px;border-radius:7px;background:var(--blue);display:flex;align-items:center;justify-content:center;}
+  .nav-links{display:flex;align-items:center;gap:22px;}
+  .nav-links a{color:#33425a;font-weight:600;font-size:.95rem;}
+  .nav-links a.nav-cta{background:var(--blue);color:#fff;padding:9px 16px;border-radius:10px;}
+  .nav-links a.nav-cta:hover{background:#1e4fd0;color:#fff;}
+  /* hero */
+  .hero{background:radial-gradient(1200px 540px at 84% -14%,#173a6b 0,var(--navy) 62%);color:#eaf2ff;}
+  .hero .wrap{padding:60px 20px 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+  .eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:#8fc0ff;}
+  h1{font-size:2.7rem;line-height:1.07;margin:.5rem 0 1rem;color:#fff;font-weight:800;}
+  .sub{color:#c4d6f0;font-size:1.08rem;}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+  .badge{font-size:.82rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#dbe8ff;border-radius:999px;padding:5px 12px;}
+  .offer{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(90deg,#f97316,#ef4444);color:#fff;font-weight:800;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:6px 14px;box-shadow:0 4px 14px rgba(239,68,68,.3);}
+  .offer .dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.3s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0 8px;}
+  .price-pill{display:inline-flex;align-items:baseline;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:8px 16px;border-radius:999px;}
+  .fineprint{color:#9fb6d6;font-size:.9rem;}
+  .mock{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 18px 50px rgba(2,12,30,.45);}
+  /* sections */
+  section{padding:56px 0;}
+  .center{text-align:center;}
+  h2{font-size:1.9rem;font-weight:800;margin:.3rem 0 .2rem;}
+  h3{font-size:1.5rem;font-weight:800;margin:.2rem 0 .5rem;}
+  .lead{color:var(--muted);}
+  .eyebrow.blue{color:var(--blue);}
+  /* trust bar */
+  .trust{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:22px 20px;text-align:center;}
+  .trust b{display:block;font-size:1.15rem;color:var(--navy);}
+  .trust span{color:var(--muted);font-size:.86rem;}
+  /* feature grid */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .feat{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;transition:transform .15s,box-shadow .15s;}
+  .feat:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,31,58,.10);}
+  .feat .ico{width:44px;height:44px;border-radius:12px;background:#eef4ff;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:10px;}
+  .feat h4{margin:.1rem 0 .35rem;font-size:1rem;}
+  .feat p{margin:0;color:var(--muted);font-size:.9rem;}
+  /* showcase */
+  .show{border:1px solid var(--line);border-radius:18px;background:#fff;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
+  .show.rev{direction:rtl;} .show.rev>*{direction:ltr;}
+  .tag{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:6px;padding:2px 7px;vertical-align:middle;margin-left:6px;}
+  ul.ticks{list-style:none;padding:0;margin:0;}
+  ul.ticks li{margin:.35rem 0;color:#334155;font-size:.95rem;} ul.ticks li::before{content:"✓";color:#16a34a;font-weight:800;margin-right:8px;}
+  /* pricing */
+  .price-card{max-width:560px;margin:0 auto;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(13,31,58,.08);padding:34px;text-align:center;background:#fff;}
+  .price-big{font-size:3.2rem;font-weight:800;color:var(--navy);}
+  .price-card .reg{color:#94a3b8;text-decoration:line-through;font-weight:600;margin-right:8px;font-size:1.4rem;}
+  .urgency{color:#ef4444;font-weight:700;font-size:.92rem;margin:6px 0 14px;}
+  /* faq */
+  .faq{max-width:760px;margin:0 auto;}
+  details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;background:#fff;}
+  details summary{font-weight:700;cursor:pointer;}
+  details p{color:var(--muted);margin:.6rem 0 0;}
+  /* footer */
+  footer{background:var(--navy);color:#bcd0ee;padding:34px 0;font-size:.9rem;}
+  footer a{color:#cfe0f5;}
+  .disclaimer{max-width:780px;margin:0 auto;color:var(--muted);font-size:.85rem;text-align:center;}
+  @media(max-width:840px){
+    .hero .wrap{grid-template-columns:1fr;} h1{font-size:2.1rem;}
+    .grid{grid-template-columns:repeat(2,1fr);} .trust .wrap{grid-template-columns:repeat(2,1fr);}
+    .show{grid-template-columns:1fr;} .show.rev{direction:ltr;} .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#"><span class="mk"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M21 15.5v-1.6l-7.5-4.6V4.2a1.5 1.5 0 0 0-3 0v5.1L3 13.9v1.6l7.5-2.2v3.9l-2 1.4v1.2l3.5-1 3.5 1v-1.2l-2-1.4v-3.9z"/></svg></span>PilotBrief</a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#scenario">Scenario mode</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#pricing" class="nav-cta">Get it — $199</a>
+  </div>
+</div></nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">For airline pilots</div>
+    <h1>Stop scrolling 4,000-page manuals.<br>Just ask.</h1>
+    <p class="sub">PilotBrief is a private AI co-pilot for your <strong>FCOM, QRH, FCTM, OM &amp; SOPs</strong>. Ask in plain English and get the exact procedure or limit back — quoted <strong>verbatim</strong>, with the document, chapter &amp; <strong>page citation</strong>. Now it can also <strong>reason through a scenario</strong>, <strong>talk to you hands-free</strong>, and <strong>work with no internet at all</strong>.</p>
+    <div class="badges">
+      <span class="badge">🧭 Scenario decision-support</span>
+      <span class="badge">🎙️ Hands-free voice</span>
+      <span class="badge">📴 Fully offline AI</span>
+      <span class="badge">📌 Cited to the page</span>
+    </div>
+    <div style="margin-bottom:10px"><span class="offer"><span class="dot"></span> Limited-time launch offer</span></div>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-light btn-lg">Get PilotBrief — $199</a>
+      <span class="price-pill"><span style="color:#9fb6d6;text-decoration:line-through;font-size:1rem">$499</span><b style="font-size:1.3rem">$199</b><span style="color:#c4d6f0">one-time · per device</span></span>
+    </div>
+    <div class="fineprint">✓ No subscription &nbsp; ✓ Works offline &nbsp; ✓ Your manuals never leave your computer</div>
+  </div>
+  <div>
+    <svg class="mock" viewBox="0 0 560 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PilotBrief app">
+      <rect width="560" height="372" rx="12" fill="#0e1117"/>
+      <rect x="0" y="0" width="560" height="34" rx="12" fill="#161b22"/>
+      <circle cx="20" cy="17" r="5" fill="#ff5f56"/><circle cx="38" cy="17" r="5" fill="#ffbd2e"/><circle cx="56" cy="17" r="5" fill="#27c93f"/>
+      <text x="280" y="21" fill="#8b949e" font-family="sans-serif" font-size="11" text-anchor="middle">PilotBrief</text>
+      <rect x="0" y="34" width="150" height="338" fill="#0b1f3a"/>
+      <rect x="14" y="50" width="122" height="26" rx="6" fill="#2563eb"/>
+      <text x="26" y="67" fill="#fff" font-family="sans-serif" font-size="11">+ New chat</text>
+      <text x="16" y="100" fill="#6f8bb0" font-family="sans-serif" font-size="9">LIBRARY</text>
+      <text x="20" y="120" fill="#cfe0f5" font-family="sans-serif" font-size="11">📁 Company OM / SOP</text>
+      <text x="20" y="142" fill="#cfe0f5" font-family="sans-serif" font-size="11">📁 B777 FCOM / QRH</text>
+      <text x="20" y="164" fill="#cfe0f5" font-family="sans-serif" font-size="11">📁 Misc</text>
+      <rect x="150" y="34" width="410" height="338" fill="#0e1117"/>
+      <rect x="300" y="56" width="240" height="30" rx="10" fill="#1f6feb"/>
+      <text x="318" y="75" fill="#fff" font-family="sans-serif" font-size="11">Max tailwind for autoland on the 777?</text>
+      <rect x="170" y="100" width="372" height="150" rx="10" fill="#161b22"/>
+      <text x="184" y="124" fill="#e6edf3" font-family="sans-serif" font-size="11">Autoland — wind limits (QRH/FCOM):</text>
+      <text x="184" y="146" fill="#cdd9e5" font-family="sans-serif" font-size="11">• Max tailwind component: <tspan fill="#fff" font-weight="700">10 kt</tspan>  [#1]</text>
+      <text x="184" y="166" fill="#cdd9e5" font-family="sans-serif" font-size="11">• Max crosswind (autoland): <tspan fill="#fff" font-weight="700">25 kt</tspan>  [#1]</text>
+      <text x="184" y="186" fill="#cdd9e5" font-family="sans-serif" font-size="11">• Max headwind: <tspan fill="#fff" font-weight="700">25 kt</tspan>  [#1]</text>
+      <rect x="184" y="206" width="150" height="26" rx="6" fill="#0b2a52" stroke="#2f6fd0"/>
+      <text x="196" y="223" fill="#9fd0ff" font-family="sans-serif" font-size="10">📄 QRH · Autoland · p.166</text>
+      <rect x="170" y="320" width="372" height="34" rx="9" fill="#161b22" stroke="#30363d"/>
+      <text x="186" y="341" fill="#6e7681" font-family="sans-serif" font-size="11">Ask about a procedure, limit, or system…</text>
+    </svg>
+  </div>
+</div></header>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust"><div class="wrap">
+  <div><b>Verbatim</b><span>checklists, never paraphrased</span></div>
+  <div><b>Page-cited</b><span>click to view the source page</span></div>
+  <div><b>On your device</b><span>manuals never leave your Mac/PC</span></div>
+  <div><b>Mac &amp; Windows</b><span>both installers included</span></div>
+</div></div>
+
+<!-- ===== FLAGSHIP SCENARIO ===== -->
+<section id="scenario"><div class="wrap">
+  <div class="show">
+    <div>
+      <div class="eyebrow blue">New — Scenario mode <span class="tag">Flagship</span></div>
+      <h3>Think <em>through</em> a situation — not just look it up</h3>
+      <p class="lead">Describe what's happening — "<em>cabin crew report flames from the right engine at FL320, no flight-deck indications</em>" — and PilotBrief works it like a crew would: it selects the checklist by its <strong>legally-binding Condition statement</strong> (not the scary keyword), distinguishes <strong>announced vs unannunciated</strong>, and reasons across systems, QRH and company procedures.</p>
+      <ul class="ticks">
+        <li>Structured with <strong>DODAR</strong>, guarded by <strong>SLEC</strong> &amp; <strong>ANC</strong>, then <strong>WWPPC</strong> before diversion</li>
+        <li>Asks a <strong>Yes/No question</strong> when a detail changes the checklist — it won't guess</li>
+        <li>Knows your QRH's structure (Boeing indexes / Airbus ECAM) and follows its usage doctrine</li>
+      </ul>
+    </div>
+    <div>
+      <svg class="mock" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scenario decision-support">
+        <rect width="520" height="320" rx="12" fill="#0e1117"/>
+        <rect x="24" y="20" width="472" height="34" rx="9" fill="#1f6feb"/>
+        <text x="40" y="42" fill="#fff" font-family="sans-serif" font-size="11">Flames from R engine, FL320, no FD indications — what do I do?</text>
+        <rect x="24" y="66" width="472" height="46" rx="10" fill="#15233b" stroke="#2f6fd0"/>
+        <text x="40" y="86" fill="#cfe3ff" font-family="sans-serif" font-size="11" font-weight="700">🤔 Is there any related EICAS message right now?</text>
+        <rect x="40" y="92" width="44" height="16" rx="8" fill="#0b2a52" stroke="#3a78d6"/><text x="52" y="104" fill="#9fd0ff" font-size="9" font-family="sans-serif">Yes</text>
+        <rect x="92" y="92" width="40" height="16" rx="8" fill="#0b2a52" stroke="#3a78d6"/><text x="103" y="104" fill="#9fd0ff" font-size="9" font-family="sans-serif">No</text>
+        <rect x="140" y="92" width="62" height="16" rx="8" fill="#0b2a52" stroke="#3a78d6"/><text x="151" y="104" fill="#9fd0ff" font-size="9" font-family="sans-serif">Unsure</text>
+        <rect x="24" y="124" width="472" height="176" rx="10" fill="#161b22"/>
+        <text x="40" y="148" fill="#9be3a0" font-family="sans-serif" font-size="10" font-weight="700">UNANNUNCIATED — no fire warning ⇒ FIRE ENG condition NOT met</text>
+        <text x="40" y="172" fill="#e6edf3" font-family="sans-serif" font-size="11" font-weight="700">Diagnosis</text>
+        <text x="40" y="190" fill="#cdd9e5" font-family="sans-serif" font-size="10">Matched by Condition → ENG LIMIT/SURGE/STALL  [#3]</text>
+        <text x="40" y="212" fill="#e6edf3" font-family="sans-serif" font-size="11" font-weight="700">Threats (SLEC)</text>
+        <text x="40" y="230" fill="#cdd9e5" font-family="sans-serif" font-size="10">S: undetected damage · L: declare PAN/MAYDAY · E: driftdown</text>
+        <text x="40" y="252" fill="#e6edf3" font-family="sans-serif" font-size="11" font-weight="700">Action</text>
+        <text x="40" y="270" fill="#cdd9e5" font-family="sans-serif" font-size="10">Open QRH NNC.7 — run the matched checklist verbatim  [#3]</text>
+        <rect x="40" y="280" width="220" height="14" rx="4" fill="#0b2a52" stroke="#2f6fd0"/>
+        <text x="50" y="291" fill="#9fd0ff" font-family="sans-serif" font-size="9">📄 QRH · NNC.7 Engines · Condition</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" style="padding-top:8px"><div class="wrap">
+  <div class="center" style="margin-bottom:26px">
+    <div class="eyebrow blue">Everything in one app</div>
+    <h2>Built for the flight deck — and the hotel room</h2>
+  </div>
+  <div class="grid">
+    <div class="feat"><div class="ico">📌</div><h4>Grounded &amp; cited</h4><p>Every answer is quoted from your manual with the document, chapter &amp; page. No invented procedures.</p></div>
+    <div class="feat"><div class="ico">🧭</div><h4>Scenario decision-support</h4><p>Work a situation through DODAR · SLEC · ANC, selecting the checklist by its Condition statement.</p></div>
+    <div class="feat"><div class="ico">🎙️</div><h4>Hands-free voice</h4><p>Natural two-way voice. Ask, get live multi-airport weather, brief an OFP — eyes up, hands on.</p></div>
+    <div class="feat"><div class="ico">📴</div><h4>Fully offline AI</h4><p>Add a small on-device model and PilotBrief answers from your library with <em>no internet, no API key</em>.</p></div>
+    <div class="feat"><div class="ico">🗂️</div><h4>Any format + OCR</h4><p>PDF, Word, Excel/CSV &amp; HTML. Scanned image-only PDFs are OCR'd so old manuals become searchable.</p></div>
+    <div class="feat"><div class="ico">✈️</div><h4>Airport &amp; approach brief</h4><p>One tap builds a brief from your manuals + live METAR/TAF + your OFP (NOTAMs, fuel, MEL).</p></div>
+    <div class="feat"><div class="ico">🎓</div><h4>Study tools</h4><p>Generate briefing decks, quizzes &amp; spaced-repetition flashcards from your own docs in seconds.</p></div>
+    <div class="feat"><div class="ico">🔒</div><h4>Private &amp; local</h4><p>Your manuals stay on your computer. Bring your own AI key — nothing is uploaded to us, ever.</p></div>
+  </div>
+</div></section>
+
+<!-- ===== VOICE + OFFLINE ===== -->
+<section style="padding-top:8px"><div class="wrap">
+  <div class="show rev">
+    <div>
+      <div class="eyebrow blue">Eyes up, hands free</div>
+      <h3>Talk to your manuals — even with no signal</h3>
+      <p class="lead">Open the voice assistant and just speak. It searches your library, pulls <strong>live weather for departure, destination and alternate</strong> at once, reads the answer back, and can brief an <strong>OFP you drop in mid-conversation</strong>. No connection at the layover hotel? The on-device model keeps answering from your manuals.</p>
+      <ul class="ticks">
+        <li>Natural, low-latency two-way voice with a live tool indicator</li>
+        <li>Offline mode for chat, briefs, decks, quizzes &amp; flashcards</li>
+        <li>Accepts images — drop in a chart, EICAS shot or diagram and ask</li>
+      </ul>
+    </div>
+    <div>
+      <svg class="mock" viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voice assistant + offline">
+        <rect width="520" height="300" rx="12" fill="#0a0f1c"/>
+        <circle cx="260" cy="118" r="58" fill="none" stroke="#2f7ef0" stroke-width="2" opacity=".5"/>
+        <circle cx="260" cy="118" r="42" fill="none" stroke="#4aa3ff" stroke-width="2" opacity=".7"/>
+        <circle cx="260" cy="118" r="26" fill="#2f7ef0"/>
+        <text x="260" y="198" fill="#cfe4ff" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="700">“Brief me for the approach into LFPG.”</text>
+        <rect x="150" y="220" width="220" height="20" rx="10" fill="#15233b"/>
+        <text x="260" y="234" fill="#8fd0ff" font-family="sans-serif" font-size="10" text-anchor="middle">🌦 Checking weather LFPG, LFPO, EBBR…</text>
+        <rect x="14" y="262" width="160" height="22" rx="8" fill="#ffc24b"/>
+        <text x="94" y="277" fill="#5a3c00" font-family="sans-serif" font-size="10" text-anchor="middle" font-weight="700">● OFFLINE — on-device AI</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" style="background:var(--bg);border-top:1px solid var(--line);"><div class="wrap">
+  <div class="center" style="margin-bottom:22px">
+    <div class="eyebrow blue">One-time price · every feature included</div>
+    <h2>Own it. No subscription, ever.</h2>
+  </div>
+  <div class="price-card">
+    <div style="margin-bottom:10px"><span class="offer"><span class="dot"></span> Limited-time launch offer</span></div>
+    <h3 style="margin-bottom:2px">Get PilotBrief</h3>
+    <div style="margin:8px 0"><span class="reg">$499</span><span class="price-big">$199</span><span style="color:var(--muted);margin-left:8px">one-time · per device</span></div>
+    <div class="urgency">⏳ Save $300 — launch price ends soon. Lock it in for life.</div>
+    <ul class="ticks" style="display:inline-block;text-align:left;margin:0 auto 18px">
+      <li>One licence key unlocks one device — lifetime, no renewal</li>
+      <li>Scenario, voice, offline, study tools — all included</li>
+      <li>Move a key to a new machine anytime · Mac &amp; Windows</li>
+    </ul>
+    <div>
+      <button id="buyBtn" class="btn btn-primary btn-lg">Buy now — $199</button>
+      <div id="buyMsg" style="color:#ef4444;font-size:.85rem;margin-top:10px;min-height:16px"></div>
+    </div>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Secure Stripe checkout — your licence key &amp; download links are emailed instantly. You bring your own OpenAI/Anthropic key to run the AI (a free local model is supported for offline use).</p>
+  </div>
+</div></section>
+
+<!-- ===== FAQ ===== -->
+<section><div class="wrap faq">
+  <div class="center" style="margin-bottom:18px"><h2>Questions</h2></div>
+  <details><summary>Is this safe to use in the flight deck?</summary><p>PilotBrief is a study &amp; reference aid. It reproduces your manuals verbatim and cites the exact page, but it is not a replacement for the official approved documentation or your operator's procedures. Always verify against your current approved manuals and apply CRM.</p></details>
+  <details><summary>Where do my manuals go?</summary><p>Nowhere. PilotBrief runs on your own Mac or PC and your documents never leave your computer. You bring your own AI key, and questions go directly from your machine to the provider — never through us.</p></details>
+  <details><summary>Does it really work offline?</summary><p>Yes. Index your manuals once, add a small free on-device model, and PilotBrief answers from your library with no internet and no API key — including scenario reasoning, briefs, and study tools.</p></details>
+  <details><summary>What do I need to run it?</summary><p>A Mac or Windows computer and your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use). A free local model is supported for offline use.</p></details>
+  <details><summary>One price — what's included?</summary><p>Everything: grounded cited answers, scenario decision-support, hands-free voice, offline AI, OCR &amp; multi-format import, airport briefs, and the study tools. One licence activates one device for life with no renewal.</p></details>
+</div></section>
+
+<!-- ===== FOOTER ===== -->
+<footer><div class="wrap">
+  <div class="brand" style="color:#fff;margin-bottom:10px"><span class="mk"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M21 15.5v-1.6l-7.5-4.6V4.2a1.5 1.5 0 0 0-3 0v5.1L3 13.9v1.6l7.5-2.2v3.9l-2 1.4v1.2l3.5-1 3.5 1v-1.2l-2-1.4v-3.9z"/></svg></span>PilotBrief</div>
+  <p class="disclaimer">© <span id="yr"></span> PilotBrief. Study &amp; reference aid only — always verify against your operator's current approved documentation before operational use. Boeing, Airbus and airline names are trademarks of their owners and are referenced for compatibility only. Questions? <a href="mailto:support@xroster.com">support@xroster.com</a></p>
+</div></footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Checkout is handled by XRoster (creates the Stripe session, fulfils the
+  // licence key, emails it). We POST here and redirect to Stripe's hosted page.
+  var CHECKOUT_URL = "https://www.xroster.com/ai/pilotbrief/api/launch-checkout";
+  var buyBtn = document.getElementById('buyBtn');
+  if (buyBtn) buyBtn.addEventListener('click', async function () {
+    var msg = document.getElementById('buyMsg');
+    var label = buyBtn.textContent;
+    buyBtn.disabled = true; buyBtn.textContent = 'Starting secure checkout…'; msg.textContent = '';
+    try {
+      var r = await fetch(CHECKOUT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ seats: 1 })
+      });
+      var d = await r.json();
+      if (d && d.url) { window.location.href = d.url; return; }
+      msg.textContent = (d && d.error) || 'Could not start checkout. Please try again.';
+    } catch (e) {
+      msg.textContent = 'Network error — please try again, or email support@xroster.com.';
+    }
+    buyBtn.disabled = false; buyBtn.textContent = label;
+  });
+</script>
+</body>
+</html>
