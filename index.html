@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://www.xroster.com">
+<link rel="dns-prefetch" href="https://www.xroster.com">
 <title>PilotBrief — AI co-pilot for your FCOM, QRH &amp; SOPs | by XRoster</title>
 <meta name="description" content="PilotBrief is a private AI co-pilot for airline pilots. Ask your FCOM, QRH, FCTM, OM & SOPs in plain English and get the exact procedure or limit back — verbatim, cited to the page. Scenario decision-support, hands-free voice, and fully offline AI. One-time price, runs on your own Mac or PC. From the team behind XRoster.">
 <meta name="keywords" content="PilotBrief, XRoster, airline pilot app, FCOM, QRH, FCTM, SOP, aviation AI, pilot study tool, type rating, checklist, EICAS, ECAM, flight deck, offline AI, crew management">
@@ -16,6 +18,7 @@
 <meta property="og:url" content="https://pilotbriefs.com/">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pilotbriefs.com/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PilotBrief — AI co-pilot for your FCOM, QRH & SOPs">
@@ -23,28 +26,144 @@
 <meta name="twitter:title" content="PilotBrief — AI co-pilot for your FCOM, QRH &amp; SOPs">
 <meta name="twitter:description" content="Ask your manuals in plain English. Verbatim, page-cited answers — plus scenario decision-support, hands-free voice, and fully offline AI. By XRoster.">
 <meta name="twitter:image" content="https://pilotbriefs.com/assets/og-image.png">
+<meta name="twitter:image:alt" content="PilotBrief — AI co-pilot for your FCOM, QRH & SOPs">
 <meta name="theme-color" content="#0b1f3a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "PilotBrief",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "macOS, Windows",
-  "description": "A private AI co-pilot for airline pilots. Ask your FCOM, QRH, FCTM, OM and SOPs in plain English and get verbatim, page-cited answers — plus scenario decision-support, hands-free voice, and fully offline AI.",
-  "url": "https://pilotbriefs.com/",
-  "offers": {
-    "@type": "Offer",
-    "price": "199",
-    "priceCurrency": "USD",
-    "url": "https://pilotbriefs.com/#pricing"
-  },
-  "brand": { "@type": "Brand", "name": "PilotBrief" },
-  "publisher": {
-    "@type": "Organization",
-    "name": "XRoster",
-    "url": "https://www.xroster.com"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pilotbriefs.com/#organization",
+      "name": "XRoster",
+      "url": "https://www.xroster.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pilotbriefs.com/assets/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "XRoster builds modern software for airline pilots and cabin crew, including the crew-management platform and PilotBrief, an AI co-pilot for aviation manuals.",
+      "sameAs": [
+        "https://www.xroster.com",
+        "https://x.com/xroster",
+        "https://www.linkedin.com/company/xroster",
+        "https://www.instagram.com/xroster.app"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pilotbriefs.com/#website",
+      "url": "https://pilotbriefs.com/",
+      "name": "PilotBrief",
+      "description": "AI co-pilot for airline pilots — ask your FCOM, QRH, FCTM, OM & SOPs in plain English and get verbatim, page-cited answers.",
+      "publisher": { "@id": "https://pilotbriefs.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://pilotbriefs.com/#software",
+      "name": "PilotBrief",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Aviation reference & study tool",
+      "operatingSystem": "macOS, Windows",
+      "url": "https://pilotbriefs.com/",
+      "description": "A private AI co-pilot for airline pilots. Ask your FCOM, QRH, FCTM, OM and SOPs in plain English and get verbatim, page-cited answers — plus scenario decision-support, hands-free voice, and fully offline AI.",
+      "image": "https://pilotbriefs.com/assets/og-image.png",
+      "screenshot": "https://pilotbriefs.com/assets/og-image.png",
+      "softwareHelp": "https://pilotbriefs.com/#faq",
+      "featureList": [
+        "Grounded, page-cited answers from your own FCOM, QRH, FCTM, OM & SOPs",
+        "Scenario decision-support (DODAR · SLEC · ANC · WWPPC)",
+        "Hands-free two-way voice with live multi-airport weather",
+        "Fully offline on-device AI — no internet, no API key required",
+        "Multi-format import (PDF, Word, Excel/CSV, HTML) with OCR",
+        "Airport & approach briefings from manuals + live METAR/TAF + OFP",
+        "Study tools: briefing decks, quizzes & spaced-repetition flashcards"
+      ],
+      "brand": { "@type": "Brand", "name": "PilotBrief" },
+      "publisher": { "@id": "https://pilotbriefs.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "199",
+        "priceCurrency": "USD",
+        "url": "https://pilotbriefs.com/#pricing",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "category": "One-time purchase, per device"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pilotbriefs.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this safe to use in the flight deck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PilotBrief is a study & reference aid. It reproduces your manuals verbatim and cites the exact page, but it is not a replacement for the official approved documentation or your operator's procedures. Always verify against your current approved manuals and apply CRM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do my manuals go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nowhere. PilotBrief runs on your own Mac or PC and your documents never leave your computer. You bring your own AI key, and questions go directly from your machine to the provider — never through us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it really work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Index your manuals once, add a small free on-device model, and PilotBrief answers from your library with no internet and no API key — including scenario reasoning, briefs, and study tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need to run it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Mac or Windows computer and your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use). A free local model is supported for offline use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "One price — what's included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything: grounded cited answers, scenario decision-support, hands-free voice, offline AI, OCR & multi-format import, airport briefs, and the study tools. One licence activates one device for life with no renewal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the official PilotBrief? Who makes it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This is the official PilotBrief, built and sold by XRoster — the crew-management platform for airline pilots and cabin crew. The only official site is pilotbriefs.com, and the app is purchased here through secure Stripe checkout. If you see PilotBrief offered anywhere else, it isn't us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which aircraft and airlines does PilotBrief work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any of them. PilotBrief is built around your documents, so it works with any aircraft type (Boeing 737/777/787, Airbus A320/A330/A350 and more) and any airline's OM/SOP — you simply load your own FCOM, QRH, FCTM and company manuals. It understands both Boeing-style QRH indexes and Airbus ECAM structure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does PilotBrief cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A one-time $199 during the launch (regularly $499) — no subscription, ever. One licence activates one device for life, and active XRoster users can claim an extra $50 off."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -295,6 +414,22 @@
   </div>
 </div></section>
 
+<!-- ===== USE CASES (crawlable, long-tail SEO) ===== -->
+<section id="use-cases" style="padding-top:8px"><div class="wrap">
+  <div class="center" style="margin-bottom:26px">
+    <div class="eyebrow blue">Who it's for</div>
+    <h2>One app for type rating, the line, and recurrent</h2>
+    <p class="lead" style="max-width:720px;margin:.4rem auto 0">PilotBrief turns your own Boeing and Airbus manuals into an instant, page-cited reference. Whether you fly the <strong>737, 777, 787, A320, A330 or A350</strong>, it works from <em>your</em> airline's documents — never a generic database.</p>
+  </div>
+  <div class="grid">
+    <div class="feat"><div class="ico">🎓</div><h4>Type-rating study</h4><p>Preparing for a new type rating? Ask your FCOM and systems manuals in plain English, then generate cited briefing decks, quizzes and spaced-repetition flashcards to lock it in.</p></div>
+    <div class="feat"><div class="ico">🔁</div><h4>Recurrent &amp; sim prep</h4><p>Rehearse non-normals before the sim. Scenario mode reasons through QRH and ECAM/EICAS procedures by their Condition statement — the way a check captain expects.</p></div>
+    <div class="feat"><div class="ico">📋</div><h4>Line ops quick reference</h4><p>Need a limit, a flow, or an OM/SOP policy fast? Get the exact procedure quoted verbatim with the document, chapter and page — on the ground or at the layover hotel, fully offline.</p></div>
+    <div class="feat"><div class="ico">🛫</div><h4>Dispatch, MEL &amp; briefings</h4><p>Build an airport or approach brief from your manuals plus live METAR/TAF and your OFP — NOTAMs, fuel, MEL and restrictions — in one tap.</p></div>
+  </div>
+  <p class="lead center" style="max-width:760px;margin:22px auto 0;font-size:.95rem">Import <strong>PDF, Word, Excel/CSV, HTML and scanned image-only manuals</strong> (OCR makes old documents searchable). PilotBrief covers your <strong>FCOM, QRH, FCTM, OM, SOP and MEL</strong> — all indexed locally on your own Mac or PC, so your company documents never leave your computer.</p>
+</div></section>
+
 <!-- ===== PRICING ===== -->
 <section id="pricing" style="background:var(--bg);border-top:1px solid var(--line);"><div class="wrap">
   <div class="center" style="margin-bottom:22px">
@@ -320,13 +455,16 @@
 </div></section>
 
 <!-- ===== FAQ ===== -->
-<section><div class="wrap faq">
-  <div class="center" style="margin-bottom:18px"><h2>Questions</h2></div>
+<section id="faq"><div class="wrap faq">
+  <div class="center" style="margin-bottom:18px"><h2>Frequently asked questions</h2></div>
   <details><summary>Is this safe to use in the flight deck?</summary><p>PilotBrief is a study &amp; reference aid. It reproduces your manuals verbatim and cites the exact page, but it is not a replacement for the official approved documentation or your operator's procedures. Always verify against your current approved manuals and apply CRM.</p></details>
   <details><summary>Where do my manuals go?</summary><p>Nowhere. PilotBrief runs on your own Mac or PC and your documents never leave your computer. You bring your own AI key, and questions go directly from your machine to the provider — never through us.</p></details>
   <details><summary>Does it really work offline?</summary><p>Yes. Index your manuals once, add a small free on-device model, and PilotBrief answers from your library with no internet and no API key — including scenario reasoning, briefs, and study tools.</p></details>
   <details><summary>What do I need to run it?</summary><p>A Mac or Windows computer and your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use). A free local model is supported for offline use.</p></details>
   <details><summary>One price — what's included?</summary><p>Everything: grounded cited answers, scenario decision-support, hands-free voice, offline AI, OCR &amp; multi-format import, airport briefs, and the study tools. One licence activates one device for life with no renewal.</p></details>
+  <details><summary>Is this the official PilotBrief? Who makes it?</summary><p>Yes. This is the official PilotBrief, built and sold by <strong>XRoster</strong> — the crew-management platform for airline pilots and cabin crew. The only official site is <strong>pilotbriefs.com</strong>, and the app is purchased here through secure Stripe checkout. If you see PilotBrief offered anywhere else, it isn't us.</p></details>
+  <details><summary>Which aircraft and airlines does it work with?</summary><p>Any of them. PilotBrief is built around <em>your</em> documents, so it works with any aircraft type (Boeing 737/777/787, Airbus A320/A330/A350 and more) and any airline's OM/SOP — you simply load your own FCOM, QRH, FCTM and company manuals. It understands both Boeing-style QRH indexes and Airbus ECAM structure.</p></details>
+  <details><summary>How much does PilotBrief cost?</summary><p>A one-time <strong>$199</strong> during the launch (regularly $499) — no subscription, ever. One licence activates one device for life, and active XRoster users can claim an extra $50 off.</p></details>
 </div></section>
 
 <!-- ===== XROSTER CROSS-SELL ===== -->

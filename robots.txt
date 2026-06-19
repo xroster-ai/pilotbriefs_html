@@ -1,0 +1,6 @@
+# robots.txt for https://pilotbriefs.com/
+User-agent: *
+Allow: /
+Disallow: /success.html
+
+Sitemap: https://pilotbriefs.com/sitemap.xml
