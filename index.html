@@ -126,7 +126,15 @@
           "name": "What do I need to run it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Mac or Windows computer and your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use). A free local model is supported for offline use."
+            "text": "A Mac or Windows computer, plus a way to power the AI: your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use), prepaid AI tokens you can buy inside the app (an optional in-app purchase — terms and conditions apply, shown before you buy), or the free on-device model for offline use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need my own AI key?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can bring your own OpenAI/Anthropic key, buy prepaid AI tokens inside the app with no key setup (an optional in-app purchase — terms and conditions apply, shown before you buy), or use the free on-device model fully offline. You can switch anytime, and your manuals always stay on your computer."
           }
         },
         {
@@ -450,7 +458,7 @@
       <button id="buyBtn" class="btn btn-primary btn-lg">Buy now — $199</button>
       <div id="buyMsg" style="color:#ef4444;font-size:.85rem;margin-top:10px;min-height:16px"></div>
     </div>
-    <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Secure Stripe checkout — your licence key &amp; download links are emailed instantly. You bring your own OpenAI/Anthropic key to run the AI (a free local model is supported for offline use).</p>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Secure Stripe checkout — your licence key &amp; download links are emailed instantly. Power the AI your way: bring your own OpenAI/Anthropic key, run the free offline model, or buy AI tokens right inside the app — no key setup needed (optional in-app purchase; terms &amp; conditions apply, shown before you buy).</p>
   </div>
 </div></section>
 
@@ -460,7 +468,8 @@
   <details><summary>Is this safe to use in the flight deck?</summary><p>PilotBrief is a study &amp; reference aid. It reproduces your manuals verbatim and cites the exact page, but it is not a replacement for the official approved documentation or your operator's procedures. Always verify against your current approved manuals and apply CRM.</p></details>
   <details><summary>Where do my manuals go?</summary><p>Nowhere. PilotBrief runs on your own Mac or PC and your documents never leave your computer. You bring your own AI key, and questions go directly from your machine to the provider — never through us.</p></details>
   <details><summary>Does it really work offline?</summary><p>Yes. Index your manuals once, add a small free on-device model, and PilotBrief answers from your library with no internet and no API key — including scenario reasoning, briefs, and study tools.</p></details>
-  <details><summary>What do I need to run it?</summary><p>A Mac or Windows computer and your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use). A free local model is supported for offline use.</p></details>
+  <details><summary>What do I need to run it?</summary><p>A Mac or Windows computer, plus a way to power the AI: your own OpenAI and/or Anthropic API key (a few dollars of usage covers heavy use), prepaid <strong>AI tokens you can buy inside the app</strong> (optional in-app purchase; terms apply), or the free on-device model for offline use.</p></details>
+  <details><summary>Do I need my own AI key?</summary><p>No — you’ve got three ways to power the AI, and you can switch anytime: <strong>bring your own</strong> OpenAI/Anthropic key, <strong>buy prepaid AI tokens inside the app</strong> with no key setup (an optional in-app purchase — <strong>terms &amp; conditions apply</strong>, shown before you buy), or use the <strong>free on-device model</strong> fully offline. Either way, your manuals stay on your computer.</p></details>
   <details><summary>One price — what's included?</summary><p>Everything: grounded cited answers, scenario decision-support, hands-free voice, offline AI, OCR &amp; multi-format import, airport briefs, and the study tools. One licence activates one device for life with no renewal.</p></details>
   <details><summary>Is this the official PilotBrief? Who makes it?</summary><p>Yes. This is the official PilotBrief, built and sold by <strong>XRoster</strong> — the crew-management platform for airline pilots and cabin crew. The only official site is <strong>pilotbriefs.com</strong>, and the app is purchased here through secure Stripe checkout. If you see PilotBrief offered anywhere else, it isn't us.</p></details>
   <details><summary>Which aircraft and airlines does it work with?</summary><p>Any of them. PilotBrief is built around <em>your</em> documents, so it works with any aircraft type (Boeing 737/777/787, Airbus A320/A330/A350 and more) and any airline's OM/SOP — you simply load your own FCOM, QRH, FCTM and company manuals. It understands both Boeing-style QRH indexes and Airbus ECAM structure.</p></details>
@@ -515,7 +524,14 @@
 <footer><div class="wrap">
   <div class="brand" style="color:#fff;margin-bottom:10px"><img class="mk-img" src="assets/icon.png" width="28" height="28" alt="PilotBrief logo">PilotBrief</div>
   <p style="text-align:center;margin:0 0 8px;color:#cfe0f5;font-size:.92rem">An <a href="https://www.xroster.com" rel="noopener" style="color:#fff;font-weight:700">XRoster</a> product — crew management for airline pilots &amp; cabin crew. <a href="https://www.xroster.com" rel="noopener">xroster.com</a></p>
-  <p class="disclaimer">© <span id="yr"></span> PilotBrief by XRoster. Study &amp; reference aid only — always verify against your operator's current approved documentation before operational use. Boeing, Airbus and airline names are trademarks of their owners and are referenced for compatibility only. Questions? <a href="mailto:support@xroster.com">support@xroster.com</a></p>
+  <p style="text-align:center;margin:0 0 8px;font-size:.9rem">
+    <a href="https://www.xroster.com/pilotbrief_terms/" rel="noopener">Terms &amp; Conditions</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.xroster.com/pilotbrief_affiliate/" rel="noopener">Affiliate Terms</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:support@xroster.com">Contact</a>
+  </p>
+  <p class="disclaimer">© <span id="yr"></span> PilotBrief by XRoster. AI tokens are an optional in-app purchase; the in-app Terms shown at purchase apply. Study &amp; reference aid only — always verify against your operator's current approved documentation before operational use. Boeing, Airbus and airline names are trademarks of their owners and are referenced for compatibility only. Questions? <a href="mailto:support@xroster.com">support@xroster.com</a></p>
 </div></footer>
 
 <script>

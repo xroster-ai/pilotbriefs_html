@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your PilotBrief trial</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<style>
+  :root{--blue:#2563eb;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(1000px 520px at 70% -10%,#173a6b,#0b1f3a 60%);color:#eaf2ff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .card{max-width:600px;width:100%;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:40px 34px;}
+  h1{font-size:1.6rem;margin:.2rem 0 .5rem;color:#fff;}
+  p{color:#c4d6f0;line-height:1.6;}
+  .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;margin:16px 0;}
+  .count{font-size:3rem;font-weight:800;color:#fff;line-height:1;margin:4px 0;}
+  .count small{display:block;font-size:.9rem;font-weight:500;color:#9fb6d6;margin-top:6px;text-transform:uppercase;letter-spacing:.06em;}
+  .ring{width:64px;height:64px;border-radius:50%;background:#16a34a;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:32px;}
+  .ring.warn{background:#d97706;}
+  a.btn,button.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;border:0;border-radius:11px;padding:13px 26px;font-size:1rem;cursor:pointer;}
+  a.link{color:#cfe0f5;}
+  .muted{color:#9fb6d6;font-size:.85rem;margin-top:16px;}
+  .email{color:#9fb6d6;font-size:.85rem;}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:middle;}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  [hidden]{display:none!important;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div id="loading" class="box"><span class="spin"></span> &nbsp;Loading your trial…</div>
+
+    <!-- Active trial -->
+    <div id="active" hidden>
+      <div class="ring">✈️</div>
+      <h1>Your PilotBrief trial</h1>
+      <div class="box">
+        <div class="count"><span id="daysNum">0</span><small id="daysUnit">days left</small></div>
+        <p id="expLine" style="margin:8px 0 0;font-size:.9rem;color:#9fb6d6;"></p>
+      </div>
+      <p>Buy the full licence to keep your access — your device stays activated and your library is kept. It switches from trial to permanent automatically.</p>
+      <p><button id="buyActive" class="btn">Buy the full licence →</button></p>
+      <p class="email" id="emailActive"></p>
+    </div>
+
+    <!-- Expired trial -->
+    <div id="expired" hidden>
+      <div class="ring warn">⏳</div>
+      <h1>Your free trial has ended</h1>
+      <p>Buy the full licence to pick up right where you left off — your local library is safe and unlocks again the moment you purchase.</p>
+      <p><button id="buyExpired" class="btn">Buy the full licence →</button></p>
+      <p class="email" id="emailExpired"></p>
+    </div>
+
+    <!-- Already paid -->
+    <div id="paid" hidden>
+      <div class="ring">✓</div>
+      <h1>You're all set</h1>
+      <p>This licence is already active. Open PilotBrief and enjoy — no further action needed.</p>
+      <p><a class="btn" href="/">← Back to PilotBrief</a></p>
+    </div>
+
+    <!-- Unknown / bad link -->
+    <div id="notfound" hidden>
+      <h1>Link not found</h1>
+      <p>This trial link is invalid or has expired. If you're mid-trial, open the app and use the countdown there, or contact support.</p>
+    </div>
+
+    <div style="margin-top:18px"><a class="link" href="/">← Back to PilotBrief</a></div>
+    <div class="muted">Questions? <a class="link" href="mailto:support@xroster.com">support@xroster.com</a></div>
+  </div>
+
+<script>
+  var API = "https://www.xroster.com/ai/pilotbrief/api/trial";
+  function q(id){return document.getElementById(id);}
+  function show(id){ ["loading","active","expired","paid","notfound"].forEach(function(s){ q(s).hidden = (s !== id); }); }
+
+  var REF = new URLSearchParams(location.search).get('ref') || '';
+
+  async function startCheckout(btn){
+    if(!REF){ return; }
+    var orig = btn.textContent; btn.disabled = true; btn.textContent = 'Starting checkout…';
+    try{
+      var r = await fetch(API + '/checkout?ref=' + encodeURIComponent(REF), { method:'POST' });
+      var d = await r.json();
+      if(d && d.checkout_url){ location.href = d.checkout_url; return; }
+      throw new Error(d && d.error || 'checkout_failed');
+    }catch(e){
+      btn.disabled = false; btn.textContent = orig;
+      alert("Sorry — couldn't start checkout. Please try again or email support@xroster.com.");
+    }
+  }
+  q('buyActive').addEventListener('click', function(){ startCheckout(this); });
+  q('buyExpired').addEventListener('click', function(){ startCheckout(this); });
+
+  (async function(){
+    if(!REF){ show('notfound'); return; }
+    try{
+      var r = await fetch(API + '/status?ref=' + encodeURIComponent(REF));
+      if(r.status === 404){ show('notfound'); return; }
+      var d = await r.json();
+      if(d.is_paid){ show('paid'); return; }
+      if(d.is_trial_active){
+        var n = (d.days_left != null) ? d.days_left : 0;
+        q('daysNum').textContent = n;
+        q('daysUnit').textContent = (n === 1 ? 'day left' : 'days left');
+        if(d.expires_at){
+          var dt = new Date(d.expires_at);
+          q('expLine').textContent = 'Trial ends ' + dt.toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'});
+        }
+        if(d.email_masked) q('emailActive').textContent = d.email_masked;
+        show('active');
+      } else {
+        // trial that has lapsed (is_trial true but not active) or any non-paid state
+        if(d.email_masked) q('emailExpired').textContent = d.email_masked;
+        show('expired');
+      }
+    }catch(e){ show('notfound'); }
+  })();
+</script>
+</body>
+</html>
