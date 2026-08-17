@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 Disallow: /success.html
+Disallow: /account.html
 
 Sitemap: https://pilotbriefs.com/sitemap.xml
