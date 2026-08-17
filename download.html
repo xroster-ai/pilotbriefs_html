@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download &amp; set up PilotBrief — Mac &amp; Windows</title>
+<meta name="description" content="Download PilotBrief for macOS or Windows and follow the illustrated setup guide: install, pass the one-time security prompt, and activate your licence key in about three minutes.">
+<link rel="canonical" href="https://pilotbriefs.com/download.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<style>
+  :root{--navy:#0b1f3a;--blue:#2563eb;--sky:#4da3ff;--ink:#0e1626;--muted:#5b6b82;--line:#e6eaf0;--bg:#f7f9fc;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:var(--blue);text-decoration:none;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:13px 22px;font-weight:700;font-size:1rem;cursor:pointer;border:0;transition:transform .12s,box-shadow .12s;text-decoration:none;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-light{background:#fff;color:var(--navy);} .btn-light:hover{box-shadow:0 8px 22px rgba(0,0,0,.18);}
+  .btn-primary{background:var(--blue);color:#fff;} .btn-primary:hover{box-shadow:0 8px 22px rgba(37,99,235,.32);}
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav.top .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--navy);font-size:1.12rem;}
+  .brand .mk-img{width:28px;height:28px;border-radius:7px;display:block;object-fit:cover;}
+  .nav-links{display:flex;align-items:center;gap:22px;}
+  .nav-links a{color:#33425a;font-weight:600;font-size:.95rem;}
+  .nav-links a.nav-cta{background:var(--blue);color:#fff;padding:9px 16px;border-radius:10px;}
+  .nav-links a.nav-cta:hover{background:#1e4fd0;color:#fff;}
+  /* hero */
+  .hero{background:radial-gradient(1100px 460px at 80% -10%,#173a6b 0,var(--navy) 60%);color:#eaf2ff;border-radius:0 0 22px 22px;}
+  .hero .wrap{padding:48px 20px 44px;}
+  .hero h1{font-size:2.1rem;line-height:1.12;margin:.4rem 0 .7rem;color:#fff;font-weight:800;}
+  .hero p{color:#cfe0ff;margin:0 0 22px;max-width:640px;}
+  .eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:#8fc0ff;}
+  .dl{display:flex;flex-wrap:wrap;gap:12px;}
+  .hero-note{color:#9bb4dd;font-size:.82rem;margin-top:12px;}
+  /* os tabs */
+  .os-tabs{display:flex;gap:8px;margin:28px 0 18px;}
+  .os-tabs button{border:1.5px solid var(--line);background:#fff;color:var(--muted);font-weight:700;padding:9px 16px;border-radius:999px;cursor:pointer;font-size:.88rem;display:inline-flex;gap:7px;align-items:center;}
+  .os-tabs button.active{border-color:var(--blue);color:var(--blue);background:#eff6ff;}
+  .os-section{display:none;}
+  .os-section.active{display:block;}
+  /* steps */
+  .step{display:flex;gap:18px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:16px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .num{flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#38bdf8);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;}
+  .step h3{font-size:1.06rem;font-weight:800;margin:2px 0 8px;}
+  .step p{color:#475569;font-size:.92rem;line-height:1.6;margin:0 0 10px;}
+  .step p:last-child{margin-bottom:0;}
+  .art{flex:0 0 132px;}
+  .art svg{width:132px;height:96px;}
+  @media (max-width:640px){ .art{display:none;} .nav-links{display:none;} }
+  .tip{background:#fff8e6;border:1px solid #f3e2b3;border-radius:10px;padding:10px 13px;font-size:.85rem;color:#7a5b12;margin-top:8px;}
+  .key{font-family:ui-monospace,Menlo,Consolas,monospace;background:#f1f5f9;border:1px solid var(--line);border-radius:6px;padding:2px 7px;}
+  /* resend */
+  .resend{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:26px;margin:34px 0 0;}
+  .resend h2{margin:0 0 6px;font-size:1.3rem;font-weight:800;}
+  .resend p{color:var(--muted);font-size:.92rem;margin:0 0 14px;}
+  .resend form{display:flex;flex-wrap:wrap;gap:10px;}
+  .resend input{flex:1 1 260px;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;font-size:1rem;font-family:inherit;}
+  .resend input:focus{outline:none;border-color:var(--blue);}
+  .resend .msg{width:100%;font-size:.9rem;min-height:20px;margin-top:4px;}
+  .resend .msg.ok{color:#16a34a;font-weight:600;}
+  .resend .msg.err{color:#ef4444;font-weight:600;}
+  /* help */
+  .help{background:linear-gradient(135deg,#0b1f3a,#1e3a8a);color:#eaf2ff;border-radius:16px;padding:24px 26px;margin:26px 0 0;}
+  .help h2{margin:0 0 10px;font-size:1.2rem;color:#fff;}
+  .help a{color:#9ecbff;}
+  .help .row{display:flex;flex-wrap:wrap;gap:22px;font-size:.94rem;}
+  /* footer */
+  footer{background:var(--navy);color:#bcd0ee;padding:34px 0;font-size:.9rem;margin-top:56px;}
+  footer a{color:#cfe0f5;}
+  main{padding-bottom:8px;}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="brand" href="/"><img class="mk-img" src="assets/icon.png" width="28" height="28" alt="PilotBrief logo">PilotBrief</a>
+  <div class="nav-links">
+    <a href="/#features">Features</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="download.html">Download</a>
+    <a href="/#pricing" class="nav-cta">Get it — $199</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Download &amp; set up</div>
+  <h1>Get PilotBrief on your Mac or PC ✈️</h1>
+  <p>Download, install, and activate in about three minutes. This guide covers the one-time security prompt on Mac and Windows, and how to enter your licence key.</p>
+  <div class="dl">
+    <a class="btn btn-light" href="https://www.xroster.com/ai/pilotbrief/latest/mac/">
+      <svg width="16" height="18" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      Download for Mac (.dmg)
+    </a>
+    <a class="btn btn-primary" href="https://www.xroster.com/ai/pilotbrief/latest/win/">
+      <span style="display:inline-flex;background:#fff;border-radius:3px;padding:2px;line-height:0"><svg width="14" height="14" viewBox="0 0 23 23" aria-hidden="true"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#7fba00" d="M12 1h10v10H12z"/><path fill="#00a4ef" d="M1 12h10v10H1z"/><path fill="#ffb900" d="M12 12h10v10H12z"/></svg></span>
+      Download for Windows (.exe)
+    </a>
+  </div>
+  <div class="hero-note">Always the latest version — free to download; a licence key (or free trial) unlocks it. Your key works on both platforms (one device per key).</div>
+</div></header>
+
+<main class="wrap">
+
+  <!-- OS toggle -->
+  <div class="os-tabs">
+    <button type="button" class="active" data-os="mac">
+      <svg width="14" height="16" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9z"/></svg>
+      macOS
+    </button>
+    <button type="button" data-os="win">
+      <span style="display:inline-flex;background:#fff;border-radius:2px;padding:1px;line-height:0"><svg width="12" height="12" viewBox="0 0 23 23" aria-hidden="true"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#7fba00" d="M12 1h10v10H12z"/><path fill="#00a4ef" d="M1 12h10v10H1z"/><path fill="#ffb900" d="M12 12h10v10H12z"/></svg></span>
+      Windows
+    </button>
+  </div>
+
+  <!-- macOS steps -->
+  <div class="os-section active" data-os="mac">
+    <div class="step">
+      <div class="num">1</div>
+      <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="148" height="88" rx="8" fill="#eef2ff" stroke="#c7d2fe"/><path d="M80 34v40m0 0 14-14m-14 14L66 60" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="40" y="84" width="80" height="8" rx="4" fill="#c7d2fe"/></svg></div>
+      <div>
+        <h3>1 · Download &amp; open the .dmg</h3>
+        <p>Click <strong>Download for Mac</strong> above. When it finishes, open the downloaded <span class="key">PilotBrief.dmg</span> from your Downloads.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="60" height="76" rx="10" fill="#dbeafe" stroke="#93c5fd"/><text x="40" y="64" font-size="26" text-anchor="middle" fill="#1e3a8a">✈</text><path d="M76 58h26m0 0-9-9m9 9-9 9" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="106" y="20" width="44" height="76" rx="10" fill="#eef2ff" stroke="#c7d2fe"/><text x="128" y="50" font-size="11" text-anchor="middle" fill="#475569">Applic-</text><text x="128" y="64" font-size="11" text-anchor="middle" fill="#475569">ations</text></svg></div>
+      <div>
+        <h3>2 · Drag PilotBrief into Applications</h3>
+        <p>In the window that opens, drag the <strong>PilotBrief</strong> icon onto the <strong>Applications</strong> folder. Then open PilotBrief from Applications (or Launchpad).</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="22" width="120" height="72" rx="10" fill="#fff7ed" stroke="#fdba74"/><circle cx="80" cy="50" r="15" fill="#fde68a" stroke="#f59e0b"/><text x="80" y="56" font-size="18" text-anchor="middle" fill="#92400e">!</text><rect x="42" y="74" width="76" height="9" rx="4" fill="#fde68a"/></svg></div>
+      <div>
+        <h3>3 · Open it — and the one keychain prompt</h3>
+        <p>Just double-click PilotBrief. It's signed with an Apple Developer ID and <strong>notarized by Apple</strong>, so it opens normally — no "damaged" message, no right-click, no Terminal.</p>
+        <p>The first time it opens, macOS may ask to allow PilotBrief to use its own <em>"PilotBrief Safe Storage"</em> item in your keychain (that's where it keeps your settings encrypted). Click <strong>Always Allow</strong> and enter your Mac password once — you won't be asked again.</p>
+        <div class="tip">This is the app unlocking its own storage, nothing else — and it only appears because this version is freshly signed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Windows steps -->
+  <div class="os-section" data-os="win">
+    <div class="step">
+      <div class="num">1</div>
+      <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="148" height="88" rx="8" fill="#eef2ff" stroke="#c7d2fe"/><path d="M80 34v40m0 0 14-14m-14 14L66 60" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="40" y="84" width="80" height="8" rx="4" fill="#c7d2fe"/></svg></div>
+      <div>
+        <h3>1 · Download &amp; run the installer</h3>
+        <p>Click <strong>Download for Windows</strong> above, then run the downloaded <span class="key">PilotBrief-Setup.exe</span> from your Downloads.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="120" height="76" rx="10" fill="#eff6ff" stroke="#93c5fd"/><text x="80" y="48" font-size="13" text-anchor="middle" fill="#1e3a8a" font-weight="700">Windows protected</text><rect x="44" y="62" width="34" height="16" rx="4" fill="#e2e8f0"/><text x="61" y="74" font-size="9" text-anchor="middle" fill="#475569">More info</text><rect x="84" y="62" width="38" height="16" rx="4" fill="#2563eb"/><text x="103" y="74" font-size="9" text-anchor="middle" fill="#fff">Run anyway</text></svg></div>
+      <div>
+        <h3>2 · Bypass SmartScreen</h3>
+        <p>Windows SmartScreen may show <em>"Windows protected your PC"</em> because the app is new and not yet widely downloaded. This is expected and safe.</p>
+        <p>Click <strong>More info</strong>, then <strong>Run anyway</strong> to continue the install.</p>
+        <div class="tip">If your browser flags the download, choose <strong>Keep</strong> / <strong>Keep anyway</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activate (both OSes) -->
+  <div class="step">
+    <div class="num">✓</div>
+    <div class="art"><svg viewBox="0 0 160 116" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="26" width="124" height="64" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/><path d="M58 58l14 14 30-30" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div>
+      <h3>Activate your licence</h3>
+      <p>Open PilotBrief → <strong>Settings → Activate licence</strong>. Enter the <strong>email you bought with</strong> and one <strong>licence key</strong> (from your purchase email or the post-checkout page, formatted like <span class="key">PB-XXXXX-XXXXX-XXXXX-XXXXX</span>). Each key activates one device — open it on a new machine and the old one releases automatically.</p>
+      <p>That's it — ask anything from your own manuals and get grounded, page-cited answers. Want it to work with no internet and no API key? In Settings, open <strong>"Use PilotBrief without internet"</strong> and let it set up the on-device AI for you.</p>
+    </div>
+  </div>
+
+  <!-- Resend key -->
+  <div class="resend" id="resend">
+    <h2>🔑 Lost your licence key?</h2>
+    <p>Enter the email you used at checkout and we'll resend your licence key and download links.</p>
+    <form id="resendForm" novalidate>
+      <input type="email" id="resendEmail" placeholder="you@example.com" autocomplete="email" required>
+      <button type="submit" class="btn btn-primary" id="resendBtn">Resend my key</button>
+      <div class="msg" id="resendMsg" role="status"></div>
+    </form>
+  </div>
+
+  <!-- Help -->
+  <div class="help">
+    <h2>Need a hand?</h2>
+    <div class="row">
+      <div>📧 Email <a href="mailto:support@xroster.com">support@xroster.com</a></div>
+      <div>💬 WhatsApp <a href="https://wa.me/447344071004">+44 7344 071004</a></div>
+    </div>
+  </div>
+
+  <p style="margin:26px 0 0;color:var(--muted);font-size:.9rem">Don't have PilotBrief yet? <a href="/#pricing"><strong>Get it for $199</strong></a> — one-time, per device, no subscription.</p>
+
+</main>
+
+<footer><div class="wrap" style="max-width:1080px">
+  <div class="brand" style="color:#fff;margin-bottom:10px"><img class="mk-img" src="assets/icon.png" width="28" height="28" alt="PilotBrief logo">PilotBrief</div>
+  <p style="text-align:center;margin:0 0 8px;color:#cfe0f5;font-size:.92rem">An <a href="https://www.xroster.com" rel="noopener" style="color:#fff;font-weight:700">XRoster</a> product — crew management for airline pilots &amp; cabin crew. <a href="https://www.xroster.com" rel="noopener">xroster.com</a></p>
+  <p style="text-align:center;margin:0 0 8px;font-size:.9rem">
+    <a href="https://www.xroster.com/pilotbrief_terms/" rel="noopener">Terms &amp; Conditions</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.xroster.com/pilotbrief_affiliate/" rel="noopener">Affiliate Terms</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:support@xroster.com">Contact</a>
+  </p>
+  <p style="max-width:780px;margin:0 auto;color:#8fa8cc;font-size:.85rem;text-align:center">© <span id="yr"></span> PilotBrief by XRoster. Study &amp; reference aid only — always verify against your operator's current approved documentation before operational use.</p>
+</div></footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // OS tabs — default to the visitor's OS.
+  (function () {
+    var tabs = document.querySelectorAll('.os-tabs button');
+    var secs = document.querySelectorAll('.os-section');
+    function show(os) {
+      tabs.forEach(function(b){ b.classList.toggle('active', b.dataset.os === os); });
+      secs.forEach(function(s){ s.classList.toggle('active', s.dataset.os === os); });
+    }
+    tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.os); }); });
+    if (/Win/i.test(navigator.platform || navigator.userAgent || '')) show('win');
+  })();
+
+  // Resend licence key.
+  (function () {
+    var API = "https://www.xroster.com/ai/pilotbrief/api/resend-key";
+    var form = document.getElementById('resendForm');
+    var input = document.getElementById('resendEmail');
+    var btn = document.getElementById('resendBtn');
+    var msg = document.getElementById('resendMsg');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var email = (input.value || '').trim();
+      msg.className = 'msg';
+      if (!email || email.indexOf('@') < 1) {
+        msg.className = 'msg err'; msg.textContent = 'Please enter a valid email address.'; return;
+      }
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending…'; msg.textContent = '';
+      try {
+        var r = await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        if (r.status === 429) {
+          msg.className = 'msg err';
+          msg.textContent = 'Too many requests — please wait a little while and try again.';
+        } else {
+          msg.className = 'msg ok';
+          msg.textContent = 'Done — if that email has a PilotBrief licence, your key and download links are on their way. Check spam/promotions too.';
+          form.reset();
+        }
+      } catch (err) {
+        msg.className = 'msg err';
+        msg.textContent = "Couldn't reach the server — please try again, or email support@xroster.com.";
+      }
+      btn.disabled = false; btn.textContent = label;
+    });
+  })();
+</script>
+</body>
+</html>

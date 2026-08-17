@@ -11,4 +11,10 @@
       <image:title>PilotBrief — AI co-pilot for your FCOM, QRH &amp; SOPs</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://pilotbriefs.com/download.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
