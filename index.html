@@ -199,6 +199,12 @@
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:600;font-size:1rem;cursor:pointer;border:0;transition:transform .12s,box-shadow .12s;}
   .btn-light{background:#fff;color:var(--navy);} .btn-light:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.18);}
   .btn-primary{background:var(--blue);color:#fff;} .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,99,235,.32);}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.4);} .btn-ghost:hover{transform:translateY(-1px);background:rgba(255,255,255,.16);}
+  .ctaband{background:radial-gradient(900px 400px at 78% -10%,#173a6b 0,var(--navy) 62%);color:#eaf2ff;padding:44px 0;}
+  .ctaband h3{color:#fff;font-size:1.6rem;margin:0 0 6px;}
+  .ctaband p{color:#c4d6f0;margin:0 0 18px;}
+  .ctaband .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+  .ctaband .sub{color:#9fb6d6;font-size:.85rem;margin-top:12px;}
   .btn-lg{padding:15px 28px;font-size:1.05rem;}
   /* nav */
   nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -300,11 +306,11 @@
     </div>
     <div style="margin-bottom:10px"><span class="offer"><span class="dot"></span> Limited-time launch offer</span></div>
     <div class="hero-cta">
-      <a href="#pricing" class="btn btn-light btn-lg">Get PilotBrief — $199</a>
-      <span class="price-pill"><span style="color:#9fb6d6;text-decoration:line-through;font-size:1rem">$299</span><b style="font-size:1.3rem">$199</b><span style="color:#c4d6f0">one-time · per device</span></span>
+      <a href="#pricing" class="btn btn-light btn-lg">Buy now — $199</a>
+      <a href="#trial" class="btn btn-ghost btn-lg">Try free for 7 days</a>
     </div>
-    <div style="margin:2px 0 8px"><a href="#trial" style="color:#8fc0ff;font-weight:700">Not sure yet? Try everything free for 7 days →</a></div>
-    <div class="fineprint">✓ No subscription &nbsp; ✓ Works offline &nbsp; ✓ Your manuals never leave your computer &nbsp; ✓ 7-day free trial</div>
+    <div style="margin:2px 0 10px"><span class="price-pill"><span style="color:#9fb6d6;text-decoration:line-through;font-size:1rem">$299</span><b style="font-size:1.3rem">$199</b><span style="color:#c4d6f0">one-time · per device</span></span> <span style="color:#9fb6d6;font-size:.88rem;margin-left:6px">Trial: full app · no card required</span></div>
+    <div class="fineprint">✓ No subscription &nbsp; ✓ Works offline &nbsp; ✓ Your manuals never leave your computer</div>
   </div>
   <div class="hero-mock">
     <button type="button" class="hero-play" id="heroPlay" aria-label="Play the PilotBrief promo video">
@@ -451,6 +457,17 @@
   <p class="lead center" style="max-width:760px;margin:22px auto 0;font-size:.95rem">Import <strong>PDF, Word, Excel/CSV, HTML and scanned image-only manuals</strong> (OCR makes old documents searchable). PilotBrief covers your <strong>FCOM, QRH, FCTM, OM, SOP and MEL</strong> — all indexed locally on your own Mac or PC, so your company documents never leave your computer.</p>
 </div></section>
 
+<!-- ===== MID-PAGE CTA ===== -->
+<section class="ctaband"><div class="wrap center">
+  <h3>Your next sim check just got easier.</h3>
+  <p>Own every answer in your manuals for a one-time <strong style="color:#fff">$199</strong> — or fly the full app <strong style="color:#fff">free for 7 days</strong> and see for yourself.</p>
+  <div class="row">
+    <a href="#pricing" class="btn btn-light btn-lg">Buy now — $199</a>
+    <a href="#trial" class="btn btn-ghost btn-lg">Start free trial</a>
+  </div>
+  <div class="sub">No subscription · No card for the trial · Your manuals never leave your computer</div>
+</div></section>
+
 <!-- ===== PRICING ===== -->
 <section id="pricing" style="background:var(--bg);border-top:1px solid var(--line);"><div class="wrap">
   <div class="center" style="margin-bottom:22px">
@@ -526,6 +543,16 @@
   <details><summary>Which aircraft and airlines does it work with?</summary><p>Any of them. PilotBrief is built around <em>your</em> documents, so it works with any aircraft type (Boeing 737/777/787, Airbus A320/A330/A350 and more) and any airline's OM/SOP — you simply load your own FCOM, QRH, FCTM and company manuals. It understands both Boeing-style QRH indexes and Airbus ECAM structure.</p></details>
   <details><summary>How much does PilotBrief cost?</summary><p>A one-time <strong>$199</strong> during the launch (regularly $299) — no subscription, ever. One licence activates one device for life, and active XRoster users can claim an extra $50 off.</p></details>
   <details><summary>Is there a free trial?</summary><p>Yes — <strong>7 days, every feature, no card required</strong>. <a href="#trial">Enter your email</a> and you'll get a temporary activation code on screen and by email: download the app, enter the code, and fly. One trial per pilot and device; upgrading keeps your device activated and your library intact.</p></details>
+</div></section>
+
+<!-- ===== CLOSING CTA ===== -->
+<section class="ctaband" style="padding:38px 0"><div class="wrap center">
+  <h3>Ready when you are, captain.</h3>
+  <p>Lock in the launch price for life — or take the 7-day trial and decide in the cruise.</p>
+  <div class="row">
+    <a href="#pricing" class="btn btn-light btn-lg">Buy now — $199</a>
+    <a href="#trial" class="btn btn-ghost btn-lg">Try free for 7 days</a>
+  </div>
 </div></section>
 
 <!-- ===== XROSTER CROSS-SELL ===== -->
