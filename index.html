@@ -101,6 +101,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Is there a free trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — 7 days with every feature unlocked and no card required. Enter your email at pilotbriefs.com/#trial and you'll get a temporary activation code on screen and by email: download the app, enter the code, and fly. One trial per pilot and device; upgrading keeps your device activated and your library intact."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Is this safe to use in the flight deck?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -272,6 +280,7 @@
     <a href="#features">Features</a>
     <a href="#scenario">Scenario mode</a>
     <a href="#pricing">Pricing</a>
+    <a href="#trial">Free trial</a>
     <a href="download.html">Download</a>
     <a href="#pricing" class="nav-cta">Get it — $199</a>
   </div>
@@ -294,7 +303,8 @@
       <a href="#pricing" class="btn btn-light btn-lg">Get PilotBrief — $199</a>
       <span class="price-pill"><span style="color:#9fb6d6;text-decoration:line-through;font-size:1rem">$299</span><b style="font-size:1.3rem">$199</b><span style="color:#c4d6f0">one-time · per device</span></span>
     </div>
-    <div class="fineprint">✓ No subscription &nbsp; ✓ Works offline &nbsp; ✓ Your manuals never leave your computer</div>
+    <div style="margin:2px 0 8px"><a href="#trial" style="color:#8fc0ff;font-weight:700">Not sure yet? Try everything free for 7 days →</a></div>
+    <div class="fineprint">✓ No subscription &nbsp; ✓ Works offline &nbsp; ✓ Your manuals never leave your computer &nbsp; ✓ 7-day free trial</div>
   </div>
   <div class="hero-mock">
     <button type="button" class="hero-play" id="heroPlay" aria-label="Play the PilotBrief promo video">
@@ -460,8 +470,46 @@
     <div>
       <button id="buyBtn" class="btn btn-primary btn-lg">Buy now — $199</button>
       <div id="buyMsg" style="color:#ef4444;font-size:.85rem;margin-top:10px;min-height:16px"></div>
+      <p style="margin:2px 0 0;font-size:.92rem">Hesitant? <a href="#trial" style="font-weight:700">Start a free 7-day trial</a> — full app, no card required.</p>
     </div>
     <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Secure Stripe checkout — your licence key &amp; download links are emailed instantly. Power the AI your way: bring your own OpenAI/Anthropic key, run the free offline model, or buy AI tokens right inside the app — no key setup needed (optional in-app purchase; terms &amp; conditions apply, shown before you buy).</p>
+  </div>
+</div></section>
+
+<!-- ===== FREE TRIAL ===== -->
+<section id="trial" style="background:radial-gradient(900px 420px at 20% -10%,#173a6b 0,var(--navy) 60%);color:#eaf2ff"><div class="wrap" style="max-width:760px">
+  <div class="center" style="margin-bottom:18px">
+    <div class="eyebrow">Try before you buy</div>
+    <h2 style="color:#fff">Fly it free for 7 days ✈️</h2>
+    <p style="color:#c4d6f0;max-width:560px;margin:8px auto 0">Every feature unlocked — cited answers from your own manuals, scenario decision-support, voice, offline AI, study tools. <strong style="color:#fff">No card required.</strong> Enter your email and we'll show your temporary activation code right here (and email it to you).</p>
+  </div>
+
+  <div id="trialFormBox" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:26px;">
+    <form id="trialForm" novalidate style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+      <input type="email" id="trialEmail" placeholder="you@airline.com" autocomplete="email" required
+             style="flex:1 1 280px;max-width:420px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.95);border-radius:11px;padding:13px 15px;font-size:1rem;font-family:inherit;color:var(--ink)">
+      <button type="submit" class="btn btn-light" id="trialBtn" style="font-weight:800">Start my free trial →</button>
+      <div id="trialMsg" role="status" style="width:100%;text-align:center;font-size:.9rem;min-height:20px;margin-top:4px;color:#fca5a5;font-weight:600"></div>
+    </form>
+    <p style="text-align:center;color:#9fb6d6;font-size:.82rem;margin:10px 0 0">One trial per pilot &amp; device · full app for 7 days · your manuals stay on your computer. Already used yours? <a href="#pricing" style="color:#8fc0ff;font-weight:700">Get the full licence →</a></p>
+  </div>
+
+  <div id="trialResult" style="display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:26px;text-align:center">
+    <div style="width:56px;height:56px;border-radius:50%;background:#16a34a;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:28px">✓</div>
+    <h3 style="color:#fff;margin:0 0 6px">Your trial is live — <span id="trialDays">7</span> days of full access</h3>
+    <p style="color:#c4d6f0;margin:0 0 14px">We've also emailed everything to <strong id="trialEmailOut" style="color:#fff"></strong>.</p>
+    <div style="color:#9fb6d6;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px">Your temporary activation code</div>
+    <div style="display:flex;align-items:center;gap:10px;justify-content:center;background:#0b1f3a;border:1px solid rgba(120,170,230,.35);border-radius:10px;padding:12px 14px;max-width:440px;margin:0 auto 14px">
+      <code id="trialKey" style="font-family:ui-monospace,Menlo,Consolas,monospace;color:#cfe3ff;font-size:1rem;word-break:break-all"></code>
+      <button id="trialCopy" class="btn btn-light" style="flex:none;padding:7px 14px;font-size:.82rem">Copy</button>
+    </div>
+    <p style="color:#c4d6f0;margin:0 0 16px;font-size:.92rem"><strong style="color:#fff">1.</strong> Download the app below &nbsp;·&nbsp; <strong style="color:#fff">2.</strong> Open <strong>Settings → Activate licence</strong> &nbsp;·&nbsp; <strong>3.</strong> Enter your email + this code</p>
+    <p style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 10px">
+      <a class="btn btn-light" href="https://www.xroster.com/ai/pilotbrief/latest/mac/">Download for Mac</a>
+      <a class="btn btn-primary" href="https://www.xroster.com/ai/pilotbrief/latest/win/">Download for Windows</a>
+    </p>
+    <p style="margin:0"><a href="download.html" style="color:#8fc0ff;font-weight:700">Full illustrated setup guide →</a></p>
+    <p id="trialExpiry" style="color:#9fb6d6;font-size:.82rem;margin:12px 0 0"></p>
   </div>
 </div></section>
 
@@ -477,6 +525,7 @@
   <details><summary>Is this the official PilotBrief? Who makes it?</summary><p>Yes. This is the official PilotBrief, built and sold by <strong>XRoster</strong> — the crew-management platform for airline pilots and cabin crew. The only official site is <strong>pilotbriefs.com</strong>, and the app is purchased here through secure Stripe checkout. If you see PilotBrief offered anywhere else, it isn't us.</p></details>
   <details><summary>Which aircraft and airlines does it work with?</summary><p>Any of them. PilotBrief is built around <em>your</em> documents, so it works with any aircraft type (Boeing 737/777/787, Airbus A320/A330/A350 and more) and any airline's OM/SOP — you simply load your own FCOM, QRH, FCTM and company manuals. It understands both Boeing-style QRH indexes and Airbus ECAM structure.</p></details>
   <details><summary>How much does PilotBrief cost?</summary><p>A one-time <strong>$199</strong> during the launch (regularly $299) — no subscription, ever. One licence activates one device for life, and active XRoster users can claim an extra $50 off.</p></details>
+  <details><summary>Is there a free trial?</summary><p>Yes — <strong>7 days, every feature, no card required</strong>. <a href="#trial">Enter your email</a> and you'll get a temporary activation code on screen and by email: download the app, enter the code, and fly. One trial per pilot and device; upgrading keeps your device activated and your library intact.</p></details>
 </div></section>
 
 <!-- ===== XROSTER CROSS-SELL ===== -->
@@ -564,6 +613,54 @@
     }
     buyBtn.disabled = false; buyBtn.textContent = label;
   });
+
+  // ── Free 7-day trial: email → temporary activation code (shown + emailed) ──
+  (function () {
+    var TRIAL_URL = "https://www.xroster.com/ai/pilotbrief/api/trial/web-start";
+    var form = document.getElementById('trialForm');
+    if (!form) return;
+    var input = document.getElementById('trialEmail');
+    var btn = document.getElementById('trialBtn');
+    var msg = document.getElementById('trialMsg');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var email = (input.value || '').trim();
+      if (!email || email.indexOf('@') < 1) { msg.textContent = 'Please enter a valid email address.'; return; }
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Setting up your trial…'; msg.textContent = '';
+      try {
+        var r = await fetch(TRIAL_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        var d = await r.json();
+        if (d && d.ok && d.key) {
+          document.getElementById('trialKey').textContent = d.key;
+          document.getElementById('trialEmailOut').textContent = d.email || email;
+          if (d.trial_days) document.getElementById('trialDays').textContent = d.trial_days;
+          if (d.expires_at) {
+            var dt = new Date(d.expires_at);
+            document.getElementById('trialExpiry').textContent = 'Trial ends ' + dt.toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'}) + ' — upgrade anytime and your device stays activated.';
+          }
+          document.getElementById('trialFormBox').style.display = 'none';
+          document.getElementById('trialResult').style.display = 'block';
+        } else {
+          msg.textContent = (d && d.message) || 'Could not start your trial. Please try again.';
+        }
+      } catch (err) {
+        msg.textContent = 'Network error — please try again, or email support@xroster.com.';
+      }
+      btn.disabled = false; btn.textContent = label;
+    });
+    var copyBtn = document.getElementById('trialCopy');
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(document.getElementById('trialKey').textContent).then(function () {
+        var t = copyBtn.textContent; copyBtn.textContent = 'Copied!';
+        setTimeout(function () { copyBtn.textContent = t; }, 1400);
+      });
+    });
+  })();
 </script>
 
 <!-- ===== AUTO-PLAY PROMO VIDEO (opens after the page loads) ===== -->
