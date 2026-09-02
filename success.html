@@ -104,7 +104,7 @@
 
       var html='';
       data.keys.forEach(function(k){
-        html+='<div class="keyrow"><code>'+esc(k)+'</code><button class="copy" data-k="'+esc(k)+'">Copy</button></div>';
+        html+='<div class="keyrow"><code>'+esc(k)+'</code><button class="copybtn" data-k="'+esc(k)+'">Copy</button></div>';
       });
       q('keys').innerHTML=html;
       q('keyPlural').textContent = data.keys.length>1 ? 's' : '';
@@ -116,7 +116,7 @@
       q('result').style.display='block';
 
       document.addEventListener('click',function(e){
-        var b=e.target.closest('.copy'); if(!b) return;
+        var b=e.target.closest('.copybtn'); if(!b) return;
         navigator.clipboard.writeText(b.getAttribute('data-k')).then(function(){
           var t=b.textContent; b.textContent='Copied'; setTimeout(function(){b.textContent=t;},1400);
         });

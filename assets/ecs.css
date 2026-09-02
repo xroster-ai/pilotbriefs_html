@@ -223,8 +223,8 @@
 /* ── shared components for the sub-pages (download / success / account) ── */
 .ecs .keyrow { display: flex; align-items: center; gap: 1rem; justify-content: space-between; background: var(--e-bg); border: 1px solid var(--e-line); border-radius: 6px; padding: .9rem 1.1rem; margin: .6rem 0; flex-wrap: wrap; }
 .ecs .keyrow code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; letter-spacing: .04em; word-break: break-all; color: var(--e-ink); }
-.ecs .copy { flex: none; background: transparent; color: var(--e-ink); border: 1px solid var(--e-ink); border-radius: 4px; padding: .5rem 1rem; font: inherit; font-size: .9rem; font-weight: 500; cursor: pointer; }
-.ecs .copy:hover { background: var(--e-ink); color: #fff; }
+.ecs .copybtn { flex: none; background: transparent; color: var(--e-ink); border: 1px solid var(--e-ink); border-radius: 4px; padding: .5rem 1rem; font: inherit; font-size: .9rem; font-weight: 500; cursor: pointer; }
+.ecs .copybtn:hover { background: var(--e-ink); color: #fff; }
 .ecs .box { background: #fff; border: 1px solid var(--e-line); border-radius: 10px; padding: 1.8rem; margin: 1.6rem 0; }
 .ecs .spin { display: inline-block; width: 15px; height: 15px; border: 2px solid var(--e-line); border-top-color: var(--e-blue); border-radius: 50%; animation: sp .7s linear infinite; vertical-align: -2px; margin-right: .5rem; }
 @keyframes sp { to { transform: rotate(360deg); } }
