@@ -26,7 +26,8 @@
   .ecs p { font-size: 1.05rem; line-height: 1.6; margin: 0; color: var(--e-ink); }
   .ecs p.mut { color: var(--e-grey-2); }
   .ecs .eyebrow { display: inline-flex; align-items: center; gap: .6rem; font-size: .95rem; font-weight: 500; color: var(--e-ink); }
-  .ecs .eyebrow i { color: var(--e-blue); font-size: 1.15rem; font-style: normal; }
+  .ecs .eyebrow i { color: var(--e-blue); font-style: normal; display: inline-flex; }
+  .ecs .eyebrow i svg { width: 17px; height: 17px; display: block; }
   .ecs .btn-e { display: inline-block; text-decoration: none; font-weight: 500; font-size: 1.05rem; padding: 1rem 1.6rem; border-radius: 4px; border: 1px solid transparent; transition: background .15s, color .15s, border-color .15s; font-family: inherit; cursor: pointer; }
   .ecs .btn-blue { background: var(--e-blue); color: #fff; } .ecs .btn-blue:hover { background: var(--e-blue-d); color: #fff; }
   .ecs .btn-black { background: var(--e-black); color: #fff; } .ecs .btn-black:hover { background: #262626; color: #fff; }
@@ -119,7 +120,8 @@
   .ecs .reasons .head { text-align: center; max-width: 720px; margin: 0 auto 4rem; }
   .ecs .reasons .head .eyebrow { justify-content: center; }
   .ecs .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 3rem 4rem; }
-  .ecs .reason i { font-size: 1.8rem; color: var(--e-ink); display: block; margin-bottom: 1rem; font-style: normal; }
+  .ecs .reason i { color: var(--e-blue); display: block; margin-bottom: 1.1rem; font-style: normal; }
+  .ecs .reason i svg { width: 26px; height: 26px; display: block; }
   .ecs .reason h3 { font-size: 1.35rem; font-weight: 500; margin-bottom: .9rem; }
   .ecs .reason p { font-size: 1.05rem; }
   @media (max-width: 640px) { .ecs .grid2 { grid-template-columns: 1fr; gap: 2.4rem; } }
@@ -175,12 +177,14 @@
   @media (max-width: 900px) { .ecs .toolgrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
   @media (max-width: 560px) { .ecs .toolgrid { grid-template-columns: 1fr; } }
   .ecs .tool { border: 1px solid var(--e-line); border-radius: 8px; padding: 1.8rem; background: #fff; }
-  .ecs .tool .ic { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 6px; background: var(--e-bg-blue); color: var(--e-blue); font-size: 1.2rem; margin-bottom: 1rem; }
+  .ecs .tool .ic { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 6px; background: var(--e-bg-blue); color: var(--e-blue); margin-bottom: 1rem; }
+.ecs .tool .ic svg { width: 21px; height: 21px; }
   .ecs .tool h3 { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; font-weight: 600; color: var(--e-ink); margin-bottom: .6rem; letter-spacing: 0; }
   .ecs .tool p { font-size: .98rem; }
   .ecs .credit { display: flex; gap: 1rem; align-items: flex-start; margin-top: 2.4rem; padding: 1.2rem 1.4rem; border-left: 3px solid var(--e-blue); background: var(--e-bg); max-width: 780px; font-size: 1.02rem; line-height: 1.55; color: var(--e-grey-2); }
   .ecs .credit b { color: var(--e-ink); font-weight: 600; }
-  .ecs .credit .ic { color: var(--e-blue); font-size: 1.1rem; line-height: 1.5; }
+  .ecs .credit .ic { color: var(--e-blue); display: inline-flex; padding-top: .18rem; }
+.ecs .credit .ic svg { width: 18px; height: 18px; }
   .ecs .audit { margin-top: 3rem; background: var(--e-bg-blue); border-radius: 10px; padding: 3rem; }
   @media (max-width: 640px) { .ecs .audit { padding: 1.8rem; } }
   .ecs .audit .steps li { border-top-color: rgba(23,53,138,.15); }
@@ -269,6 +273,7 @@
 .ecs .toolsrail .row { display: flex; align-items: center; gap: .9rem; padding: .8rem .9rem; border: 1px solid var(--e-line); border-radius: 9px; margin-bottom: .55rem; background: #fff; transition: border-color .15s, background .15s; }
 .ecs .toolsrail .row:last-child { margin-bottom: 0; }
 .ecs .toolsrail .row:hover { border-color: var(--e-blue); background: var(--e-bg-blue); }
-.ecs .toolsrail .ic { flex: none; width: 30px; height: 30px; border-radius: 7px; background: var(--e-bg); color: var(--e-blue); display: flex; align-items: center; justify-content: center; font-size: .95rem; }
+.ecs .toolsrail .ic { flex: none; width: 30px; height: 30px; border-radius: 7px; background: var(--e-bg); color: var(--e-blue); display: flex; align-items: center; justify-content: center; }
+.ecs .toolsrail .ic svg { width: 17px; height: 17px; }
 .ecs .toolsrail b { display: block; font-size: .98rem; font-weight: 600; line-height: 1.25; }
 .ecs .toolsrail small { display: block; font-size: .82rem; color: var(--e-grey-2); }
