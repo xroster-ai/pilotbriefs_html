@@ -255,6 +255,10 @@
 .ecs .foot-min .row { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-bottom: 1.2rem; }
 .ecs [hidden] { display: none !important; }
 
+/* ── product screenshot ── */
+.ecs .shot { margin: 3rem 0 0; border: 1px solid var(--e-line); border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 18px 50px rgba(15,23,42,.10); }
+.ecs .shot img { display: block; width: 100%; height: auto; }
+
 /* ── the app's Tools rail, reproduced ── */
 .ecs .toolsplit { display: grid; grid-template-columns: 1fr minmax(0, 340px); gap: 3rem 4rem; align-items: start; margin-top: 3rem; }
 @media (max-width: 900px) { .ecs .toolsplit { grid-template-columns: 1fr; gap: 2.4rem; } }
