@@ -11,7 +11,10 @@
     --e-line: #dcdcdc;
     --e-font: "Inter", "Public Sans", system-ui, -apple-system, sans-serif;
   }
-  .ecs { font-family: var(--e-font); color: var(--e-ink); background: #fff; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+  /* No overflow clipping here: any overflow value other than visible on an
+   ancestor turns off position:sticky for the nav. The hero clips its own
+   bleeding photo instead. */
+.ecs { font-family: var(--e-font); color: var(--e-ink); background: #fff; -webkit-font-smoothing: antialiased; }
   .ecs * { box-sizing: border-box; }
   .ecs a { color: inherit; }
   .ecs .wrap { width: min(1200px, calc(100% - 3rem)); margin: 0 auto; }
@@ -251,3 +254,17 @@
 .ecs .foot-min a:hover { color: #c9ccd0; }
 .ecs .foot-min .row { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-bottom: 1.2rem; }
 .ecs [hidden] { display: none !important; }
+
+/* ── the app's Tools rail, reproduced ── */
+.ecs .toolsplit { display: grid; grid-template-columns: 1fr minmax(0, 340px); gap: 3rem 4rem; align-items: start; margin-top: 3rem; }
+@media (max-width: 900px) { .ecs .toolsplit { grid-template-columns: 1fr; gap: 2.4rem; } }
+.ecs .toolsrail { border: 1px solid var(--e-line); border-radius: 12px; background: #fff; padding: 1rem; box-shadow: 0 8px 30px rgba(15,23,42,.06); }
+.ecs .toolsrail .hd { display: flex; align-items: baseline; justify-content: space-between; padding: .4rem .6rem 1rem; }
+.ecs .toolsrail .hd b { font-size: 1.15rem; font-weight: 600; }
+.ecs .toolsrail .hd span { font-size: .78rem; color: var(--e-grey-2); }
+.ecs .toolsrail .row { display: flex; align-items: center; gap: .9rem; padding: .8rem .9rem; border: 1px solid var(--e-line); border-radius: 9px; margin-bottom: .55rem; background: #fff; transition: border-color .15s, background .15s; }
+.ecs .toolsrail .row:last-child { margin-bottom: 0; }
+.ecs .toolsrail .row:hover { border-color: var(--e-blue); background: var(--e-bg-blue); }
+.ecs .toolsrail .ic { flex: none; width: 30px; height: 30px; border-radius: 7px; background: var(--e-bg); color: var(--e-blue); display: flex; align-items: center; justify-content: center; font-size: .95rem; }
+.ecs .toolsrail b { display: block; font-size: .98rem; font-weight: 600; line-height: 1.25; }
+.ecs .toolsrail small { display: block; font-size: .82rem; color: var(--e-grey-2); }
