@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://www.xroster.com">
 <link rel="dns-prefetch" href="https://www.xroster.com">
 <title>PilotBrief — AI co-pilot for your FCOM, QRH &amp; SOPs | by XRoster</title>
-<meta name="description" content="PilotBrief is a private AI co-pilot for airline pilots. Ask your FCOM, QRH, FCTM, OM & SOPs in plain English and get the exact procedure or limit back — verbatim, cited to the page. Scenario decision-support, hands-free voice, and fully offline AI. One-time price, runs on your own Mac or PC. From the team behind XRoster.">
+<meta name="description" content="PilotBrief is a private AI co-pilot for airline pilots and student pilots. Ask your FCOM, QRH, FCTM, OM & SOPs in your own words and get the exact procedure or limit back — verbatim, cited to the page. Sim prep, scenario decision-support, study tools and offline AI, plus conformity audit and amendment tools for inspectors. One-time price, five languages, Mac and Windows.">
 <meta name="keywords" content="PilotBrief, XRoster, airline pilot app, FCOM, QRH, FCTM, SOP, aviation AI, pilot study tool, type rating, checklist, EICAS, ECAM, flight deck, offline AI, crew management, conformity audit, OM-A checklist, compliance, quality inspector, operations director">
 <meta name="author" content="XRoster">
 <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
 <meta property="og:image:alt" content="PilotBrief — AI co-pilot for your FCOM, QRH & SOPs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PilotBrief — AI co-pilot for your FCOM, QRH &amp; SOPs">
-<meta name="twitter:description" content="Ask your manuals in plain English. Verbatim, page-cited answers — plus scenario decision-support, hands-free voice, and fully offline AI. By XRoster.">
+<meta name="twitter:description" content="Ask your manuals in your own words. Verbatim, page-cited answers — plus sim prep, scenario decision-support, study tools and fully offline AI. By XRoster.">
 <meta name="twitter:image" content="https://pilotbriefs.com/assets/og-image.png">
 <meta name="twitter:image:alt" content="PilotBrief — AI co-pilot for your FCOM, QRH & SOPs">
 <meta name="theme-color" content="#0b1f3a">
@@ -56,7 +56,7 @@
       "@id": "https://pilotbriefs.com/#website",
       "url": "https://pilotbriefs.com/",
       "name": "PilotBrief",
-      "description": "AI co-pilot for airline pilots — ask your FCOM, QRH, FCTM, OM & SOPs in plain English and get verbatim, page-cited answers.",
+      "description": "AI co-pilot for airline pilots and student pilots — ask your FCOM, QRH, FCTM, OM & SOPs in your own words and get verbatim, page-cited answers.",
       "publisher": { "@id": "https://pilotbriefs.com/#organization" },
       "inLanguage": "en"
     },
@@ -213,222 +213,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/marketing/hero-aircraft.jpg" fetchpriority="high">
-<style>
-  :root {
-    --e-black: #0a0a0a;
-    --e-ink: #111111;
-    --e-grey: #a3a3a3;        /* two-tone headline lead-in */
-    --e-grey-2: #6b6b6b;
-    --e-bg: #f0f0f0;          /* light grey sections */
-    --e-bg-blue: #e9f1fb;     /* pale blue numbered panels */
-    --e-blue: #17358a;        /* royal blue */
-    --e-blue-d: #12296b;
-    --e-line: #dcdcdc;
-    --e-font: "Inter", "Public Sans", system-ui, -apple-system, sans-serif;
-  }
-  .ecs { font-family: var(--e-font); color: var(--e-ink); background: #fff; overflow-x: clip; -webkit-font-smoothing: antialiased; }
-  .ecs * { box-sizing: border-box; }
-  .ecs a { color: inherit; }
-  .ecs .wrap { width: min(1200px, calc(100% - 3rem)); margin: 0 auto; }
-  .ecs h1, .ecs h2, .ecs h3 { font-family: var(--e-font); letter-spacing: -.02em; color: var(--e-ink); margin: 0; }
-  .ecs .dim { color: var(--e-grey); }
-  .ecs .h-xl { font-size: clamp(2.6rem, 6.4vw, 5.4rem); font-weight: 500; line-height: 1.03; letter-spacing: -.035em; }
-  .ecs .h-l { font-size: clamp(2rem, 3.8vw, 3.4rem); font-weight: 500; line-height: 1.12; letter-spacing: -.03em; }
-  .ecs .h-m { font-size: clamp(1.6rem, 2.6vw, 2.35rem); font-weight: 500; line-height: 1.18; letter-spacing: -.025em; }
-  .ecs p { font-size: 1.05rem; line-height: 1.6; margin: 0; color: var(--e-ink); }
-  .ecs p.mut { color: var(--e-grey-2); }
-  .ecs .eyebrow { display: inline-flex; align-items: center; gap: .6rem; font-size: .95rem; font-weight: 500; color: var(--e-ink); }
-  .ecs .eyebrow i { color: var(--e-blue); font-size: 1.15rem; font-style: normal; }
-  .ecs .btn-e { display: inline-block; text-decoration: none; font-weight: 500; font-size: 1.05rem; padding: 1rem 1.6rem; border-radius: 4px; border: 1px solid transparent; transition: background .15s, color .15s, border-color .15s; font-family: inherit; cursor: pointer; }
-  .ecs .btn-blue { background: var(--e-blue); color: #fff; } .ecs .btn-blue:hover { background: var(--e-blue-d); color: #fff; }
-  .ecs .btn-black { background: var(--e-black); color: #fff; } .ecs .btn-black:hover { background: #262626; color: #fff; }
-  .ecs .btn-white { background: #fff; color: var(--e-ink); } .ecs .btn-white:hover { background: #ededed; }
-  .ecs .btn-outline { background: transparent; color: var(--e-ink); border-color: var(--e-ink); } .ecs .btn-outline:hover { background: var(--e-ink); color: #fff; }
-  .ecs section { position: relative; }
-  .ecs .pad { padding: 6rem 0; }
-  @media (max-width: 768px) { .ecs .pad { padding: 4.5rem 0; } }
-
-  /* ── nav ── */
-  .ecs .nav { position: sticky; top: 0; z-index: 60; background: #fff; border-bottom: 1px solid var(--e-line); }
-  .ecs .nav > .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
-  .ecs .logo { text-decoration: none; display: block; }
-  .ecs .logo .bar { display: block; width: 44px; height: 6px; background: var(--e-blue); margin-bottom: .35rem; }
-  .ecs .logo .word { display: block; font-size: 1.75rem; font-weight: 700; letter-spacing: -.02em; line-height: 1; color: var(--e-ink); text-transform: uppercase; }
-  .ecs .logo .sub { display: block; font-size: .78rem; font-weight: 600; color: var(--e-ink); margin-top: .2rem; letter-spacing: .01em; white-space: nowrap; }
-  @media (max-width: 576px) { .ecs .logo .sub { display: none; } .ecs .nav > .wrap { height: 72px; } }
-  .ecs .nav nav { display: flex; align-items: center; gap: 2rem; }
-  .ecs .nav nav a { text-decoration: none; font-size: 1rem; font-weight: 500; color: var(--e-ink); }
-  .ecs .nav nav a:hover { color: var(--e-blue); }
-  /* Nav/drawer link colour must never win over a filled button's own colour. */
-  .ecs .nav nav a.btn-e.btn-blue, .ecs .drawer a.btn-e.btn-blue,
-  .ecs .nav nav a.btn-e.btn-blue:hover, .ecs .drawer a.btn-e.btn-blue:hover,
-  .ecs .nav nav a.btn-e.btn-black, .ecs .drawer a.btn-e.btn-black { color: #fff; }
-  .ecs .menu-btn { background: none; border: 0; font: inherit; font-size: 1.25rem; font-weight: 500; color: var(--e-ink); cursor: pointer; padding: .3rem 0; }
-  .ecs .drawer { display: none; border-top: 1px solid var(--e-line); background: #fff; }
-  .ecs .drawer.open { display: block; }
-  .ecs .drawer .wrap { display: block; height: auto; padding: .4rem 0 1.2rem; }
-  .ecs .drawer a { display: block; padding: 1rem 0; font-size: 1.25rem; text-decoration: none; border-bottom: 1px solid var(--e-line); }
-  .ecs .drawer a:last-child { border-bottom: 0; }
-  @media (min-width: 993px) { .ecs .menu-btn { display: none; } }
-  @media (max-width: 992px) { .ecs .nav nav.desk { display: none; } }
-
-  /* ── hero ── */
-  .ecs .hero { background: var(--e-bg); overflow: hidden; }
-  .ecs .hero .wrap { position: relative; min-height: clamp(640px, 88vh, 900px); display: flex; align-items: center; padding: 5rem 0 5rem; }
-  .ecs .hero .copy { max-width: 860px; position: relative; z-index: 2; }
-  .ecs .hero p { max-width: 640px; margin: 1.9rem 0 2.4rem; font-size: 1.15rem; }
-  .ecs .hero .photo { position: absolute; right: -18%; bottom: 0; width: 70%; height: 92%; object-fit: cover; object-position: 18% 55%; z-index: 1; pointer-events: none; filter: grayscale(1);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(180deg, transparent 0%, #000 22%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(180deg, transparent 0%, #000 22%); mask-composite: intersect; }
-  @media (max-width: 992px) { .ecs .hero .wrap { display: block; padding: 4rem 0 0; min-height: 0; } .ecs .hero .photo { position: relative; display: block; right: auto; bottom: auto; width: 100%; height: 340px; margin-top: 2.5rem; object-position: 30% 55%; mask-image: linear-gradient(180deg, transparent 0%, #000 30%); -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%); } }
-
-  /* ── mission ── */
-  .ecs .mission .copy { max-width: 900px; }
-  .ecs .mission p { max-width: 640px; margin: 1.6rem 0 2.2rem; }
-  .ecs .wide-photo { display: block; width: 100%; height: clamp(260px, 38vw, 520px); object-fit: cover; object-position: 50% 45%; border-radius: 8px; margin-top: 4.5rem; }
-
-  /* ── blue marquee band ── */
-  .ecs .band { background: var(--e-blue); color: #fff; overflow: hidden; padding: 1.35rem 0; }
-  .ecs .band .track { display: flex; gap: 6rem; width: max-content; animation: slide 40s linear infinite; }
-  .ecs .band span { white-space: nowrap; font-size: 1.15rem; font-weight: 500; }
-  @keyframes slide { to { transform: translateX(-50%); } }
-
-  /* ── differentiation ── */
-  .ecs .diff .cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 3rem 5rem; margin-top: 3.5rem; }
-  @media (max-width: 768px) { .ecs .diff .cols { grid-template-columns: 1fr; gap: 2.5rem; } }
-  .ecs .diff .col h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; color: var(--e-grey-2); margin-bottom: 1.2rem; }
-  .ecs .diff .col.us h3 { color: var(--e-blue); }
-  .ecs .diff ul { list-style: none; padding: 0; margin: 0; }
-  .ecs .diff li { padding: .95rem 0; border-top: 1px solid var(--e-line); font-size: 1.15rem; line-height: 1.45; color: var(--e-grey-2); }
-  .ecs .diff .col.us li { color: var(--e-ink); }
-  .ecs .diff li:last-child { border-bottom: 1px solid var(--e-line); }
-  .ecs .diff .closing { margin-top: 3rem; max-width: 820px; }
-
-  /* ── services ── */
-  .ecs .services .desks { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 3rem 4rem; margin-top: 3rem; }
-  @media (max-width: 768px) { .ecs .services .desks { grid-template-columns: 1fr; gap: 2.4rem; } }
-  .ecs .services .desk h3 { font-size: .9rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--e-blue); margin-bottom: .6rem; }
-  .ecs .services .list { list-style: none; padding: 0; margin: 0; }
-  .ecs .services .list li { font-size: 1.15rem; padding: .5rem 0; color: var(--e-grey-2); font-weight: 400; cursor: default; transition: color .15s; }
-  .ecs .services .list li.on, .ecs .services .list li:hover { color: var(--e-ink); }
-  .ecs .panel { background: var(--e-bg-blue); padding: 4.5rem 0; }
-  .ecs .panel .num { font-size: clamp(3.2rem, 6vw, 5.2rem); font-weight: 400; color: var(--e-blue); line-height: 1; letter-spacing: -.03em; }
-  .ecs .panel h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500; margin: 1.2rem 0 2.6rem; }
-  .ecs .panel p { max-width: 560px; }
-  .ecs .panel + .panel { border-top: 1px solid rgba(23,53,138,.12); }
-
-  /* ── black section ── */
-  .ecs .dark { background: var(--e-black); color: #fff; }
-  .ecs .dark h2, .ecs .dark h3, .ecs .dark p, .ecs .dark .eyebrow { color: #fff; }
-  .ecs .dark .dim { color: #8a8a8a; }
-  .ecs .dark hr { border: 0; border-top: 1px solid #3a3a3a; margin: 4rem 0 3rem; }
-  .ecs .label { font-size: .9rem; letter-spacing: .14em; text-transform: uppercase; color: #8a8a8a; font-weight: 500; }
-  .ecs .gates { overflow: hidden; margin-top: 2.2rem; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-  .ecs .gates .track { display: flex; gap: 5rem; width: max-content; animation: slide 48s linear infinite; }
-  .ecs .gates span { white-space: nowrap; font-size: 1.35rem; font-weight: 500; }
-
-  /* ── reasons ── */
-  .ecs .reasons { background: var(--e-bg); }
-  .ecs .reasons .head { text-align: center; max-width: 720px; margin: 0 auto 4rem; }
-  .ecs .reasons .head .eyebrow { justify-content: center; }
-  .ecs .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 3rem 4rem; }
-  .ecs .reason i { font-size: 1.8rem; color: var(--e-ink); display: block; margin-bottom: 1rem; font-style: normal; }
-  .ecs .reason h3 { font-size: 1.35rem; font-weight: 500; margin-bottom: .9rem; }
-  .ecs .reason p { font-size: 1.05rem; }
-  @media (max-width: 640px) { .ecs .grid2 { grid-template-columns: 1fr; gap: 2.4rem; } }
-
-  /* ── quote band ── */
-  .ecs .quote { background: var(--e-bg); border-top: 1px solid var(--e-line); text-align: center; }
-  .ecs .quote p { max-width: 880px; margin: 0 auto 2.6rem; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.5; }
-
-  /* ── about / illustration ── */
-  .ecs .about p { max-width: 640px; }
-  .ecs .about .people { display: block; width: 100%; height: clamp(280px, 40vw, 560px); object-fit: cover; object-position: 50% 40%; border-radius: 8px; margin: 3rem 0 0; }
-  .ecs .board { margin: 3rem 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--e-line); background: #fff; }
-  .ecs .board .top { display: flex; align-items: center; gap: .6rem; padding: .8rem 1rem; border-bottom: 1px solid var(--e-line); background: var(--e-bg); font-size: .85rem; color: var(--e-grey-2); }
-  .ecs .board .top b { color: var(--e-ink); font-weight: 600; }
-  .ecs .board .top .ok { margin-left: auto; color: var(--e-blue); font-weight: 600; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
-  .ecs .board .art { display: block; width: 100%; height: auto; }
-  .ecs .cap { font-size: .85rem; color: var(--e-grey-2); margin-top: -1.6rem; margin-bottom: 3rem; }
-
-  /* ── full-bleed band ── */
-  .ecs .bleed { position: relative; color: #fff; overflow: hidden; background: #2d3238; }
-  .ecs .bleed .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; filter: grayscale(1); }
-  .ecs .bleed::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.18) 55%, rgba(0,0,0,.5) 100%); }
-  .ecs .bleed .wrap { position: relative; z-index: 2; padding: 7rem 0 9rem; }
-  .ecs .bleed h2 { color: #fff; }
-  .ecs .bleed .dim { color: #d5d8dc; }
-  @media (max-width: 992px) { .ecs .bleed .wrap { padding: 5rem 0 6rem; } }
-
-  /* ── footer ── */
-  .ecs footer { background: var(--e-black); color: #fff; padding: 4rem 0 3rem; }
-  .ecs footer .cols { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 2.5rem; }
-  @media (max-width: 768px) { .ecs footer .cols { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-  .ecs footer .h { color: #8a8a8a; font-size: 1.15rem; font-weight: 400; margin-bottom: 1rem; }
-  .ecs footer ul { list-style: none; padding: 0; margin: 0; }
-  .ecs footer li { margin-bottom: .75rem; }
-  .ecs footer a { text-decoration: none; color: #fff; font-size: 1.15rem; font-weight: 500; }
-  .ecs footer a:hover { color: #c9ccd0; }
-  .ecs footer .base { border-top: 1px solid #2c2c2c; margin-top: 3.5rem; padding-top: 1.6rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; color: #8a8a8a; font-size: .9rem; }
-  .ecs footer .base p { color: #8a8a8a; font-size: .9rem; }
-
-  @media (prefers-reduced-motion: reduce) { .ecs .band .track, .ecs .gates .track { animation: none; } }
-
-  /* ── PilotBrief-specific components (same tokens) ── */
-  .ecs .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-  .ecs .demo { display: inline-flex; align-items: center; gap: .7rem; background: none; border: 0; padding: .4rem 0; font: inherit; font-size: 1rem; font-weight: 500; color: var(--e-ink); cursor: pointer; }
-  .ecs .demo .disc { width: 40px; height: 40px; border-radius: 50%; background: var(--e-blue); color: #fff; display: inline-flex; align-items: center; justify-content: center; flex: none; }
-  .ecs .demo:hover { color: var(--e-blue); }
-  .ecs .demo:hover .disc { background: var(--e-blue-d); }
-  .ecs .facts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.5rem; border-top: 1px solid var(--e-line); border-bottom: 1px solid var(--e-line); padding: 1.8rem 0; }
-  .ecs .facts b { display: block; font-size: 1.05rem; font-weight: 600; }
-  .ecs .facts span { color: var(--e-grey-2); font-size: .92rem; }
-  @media (max-width: 768px) { .ecs .facts { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.2rem; } }
-  .ecs .toolgrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem; margin-top: 3rem; }
-  @media (max-width: 900px) { .ecs .toolgrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-  @media (max-width: 560px) { .ecs .toolgrid { grid-template-columns: 1fr; } }
-  .ecs .tool { border: 1px solid var(--e-line); border-radius: 8px; padding: 1.8rem; background: #fff; }
-  .ecs .tool .ic { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 6px; background: var(--e-bg-blue); color: var(--e-blue); font-size: 1.2rem; margin-bottom: 1rem; }
-  .ecs .tool h3 { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; font-weight: 600; color: var(--e-ink); margin-bottom: .6rem; letter-spacing: 0; }
-  .ecs .tool p { font-size: .98rem; }
-  .ecs .audit { margin-top: 3rem; background: var(--e-bg-blue); border-radius: 10px; padding: 3rem; }
-  @media (max-width: 640px) { .ecs .audit { padding: 1.8rem; } }
-  .ecs .audit .steps li { border-top-color: rgba(23,53,138,.15); }
-  .ecs .buy { display: grid; grid-template-columns: minmax(0, 620px) minmax(0, 1fr); gap: 3rem 4.5rem; align-items: start; }
-  @media (max-width: 900px) { .ecs .buy { grid-template-columns: 1fr; gap: 2.6rem; } }
-  .ecs .buy .side h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; color: var(--e-grey-2); margin-bottom: 1.2rem; }
-  .ecs .buy .side ul { list-style: none; padding: 0; margin: 0 0 2.4rem; }
-  .ecs .buy .side li { padding: .85rem 0; border-top: 1px solid var(--e-line); font-size: 1.1rem; color: var(--e-ink); }
-  .ecs .buy .side li:last-child { border-bottom: 1px solid var(--e-line); }
-  .ecs .price-card { border: 1px solid var(--e-line); border-radius: 10px; background: #fff; padding: 2.6rem; }
-  .ecs .price-card .tagline { display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: var(--e-blue); padding: .35rem .7rem; border-radius: 3px; }
-  .ecs .price-card .amount { display: flex; align-items: baseline; gap: .7rem; margin: 1.4rem 0 .3rem; flex-wrap: wrap; }
-  .ecs .price-card .was { color: var(--e-grey); text-decoration: line-through; font-size: 1.5rem; font-weight: 500; }
-  .ecs .price-card .now { font-size: clamp(2.8rem, 5vw, 3.6rem); font-weight: 500; letter-spacing: -.035em; line-height: 1; }
-  .ecs .price-card .per { color: var(--e-grey-2); font-size: 1rem; }
-  .ecs .price-card ul { list-style: none; padding: 0; margin: 1.8rem 0; }
-  .ecs .price-card li { padding: .8rem 0; border-top: 1px solid var(--e-line); color: var(--e-grey-2); font-size: 1.05rem; }
-  .ecs .price-card li:last-child { border-bottom: 1px solid var(--e-line); }
-  .ecs .fine { color: var(--e-grey-2); font-size: .88rem; line-height: 1.55; margin-top: 1.4rem; }
-  .ecs .trial { background: var(--e-bg-blue); }
-  .ecs .trial .box { background: #fff; border: 1px solid var(--e-line); border-radius: 10px; padding: 2.4rem; }
-  .ecs .trial input[type=email] { flex: 1 1 280px; max-width: 420px; border: 1px solid var(--e-line); border-radius: 4px; padding: 1rem 1.1rem; font-size: 1.05rem; font-family: inherit; color: var(--e-ink); background: #fff; }
-  .ecs .trial input[type=email]:focus { outline: none; border-color: var(--e-blue); }
-  .ecs .code { display: flex; align-items: center; gap: 1rem; justify-content: space-between; background: var(--e-bg); border: 1px solid var(--e-line); border-radius: 6px; padding: 1rem 1.1rem; max-width: 520px; flex-wrap: wrap; }
-  .ecs .code code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.1rem; letter-spacing: .04em; word-break: break-all; color: var(--e-ink); }
-  .ecs .steps { list-style: none; padding: 0; margin: 1.6rem 0; }
-  .ecs .steps li { padding: .7rem 0; border-top: 1px solid var(--e-line); color: var(--e-grey-2); font-size: 1.05rem; }
-  .ecs .steps li b { color: var(--e-ink); font-weight: 600; }
-  .ecs .faq details { border-top: 1px solid var(--e-line); padding: 1.4rem 0; }
-  .ecs .faq details:last-of-type { border-bottom: 1px solid var(--e-line); }
-  .ecs .faq summary { font-size: 1.2rem; font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
-  .ecs .faq summary::-webkit-details-marker { display: none; }
-  .ecs .faq summary::after { content: "+"; color: var(--e-blue); font-size: 1.6rem; font-weight: 400; line-height: 1; flex: none; }
-  .ecs .faq details[open] summary::after { content: "\2013"; }
-  .ecs .faq details p { color: var(--e-grey-2); margin-top: 1rem; max-width: 900px; }
-  .ecs .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
-  .ecs .rv.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .ecs .rv { opacity: 1; transform: none; transition: none; } }
-</style>
+<link rel="stylesheet" href="assets/ecs.css">
 </head>
 <body class="ecs">
 
@@ -582,23 +367,42 @@
   </div>
 </section>
 
-<!-- ===== DOCUMENT TOOLS (inspectors, quality & ops management) ===== -->
+<!-- ===== TOOLS — pilots first, then compliance ===== -->
 <section class="tools pad" id="tools">
   <div class="wrap">
-    <div class="eyebrow"><i>✈</i> For inspectors, quality &amp; operations management</div>
-    <h2 class="h-l" style="margin-top:1.4rem"><span class="dim">Not only questions.</span><br>Whole documents, worked.</h2>
-    <p class="mut" style="max-width:760px;margin-top:1.8rem">Alongside the flight-deck side of the app, PilotBrief runs document tools built for the people who write, amend and audit the manuals — quality and compliance staff, post-holders and operations directors.</p>
+    <div class="eyebrow"><i>✈</i> The tools</div>
+    <h2 class="h-l" style="margin-top:1.4rem"><span class="dim">Ask a question, or</span><br>hand it a whole document.</h2>
+    <p class="mut" style="max-width:760px;margin-top:1.8rem">Type <b>@</b> in the message box and PilotBrief opens its tools and your library. Point one at a document and it does the work end to end — grounded in your own manuals, cited to the page.</p>
+
+    <div class="credit"><span class="ic">✈</span><div><b>Built with line pilots.</b> The flight-deck and study tools were shaped with pilots flying the line today, and with students working through their type rating.</div></div>
 
     <div class="toolgrid">
-      <div class="tool"><span class="ic">☑</span><h3>conformity</h3><p class="mut">Audit one or more documents against a checklist — an EASA or ANAC OM-A checklist, for example — item by item.</p></div>
-      <div class="tool"><span class="ic">⇄</span><h3>compare</h3><p class="mut">Compare two documents and see what actually differs between the revisions.</p></div>
-      <div class="tool"><span class="ic">⤴</span><h3>update</h3><p class="mut">Apply an updates document to a base document and get the updated text back.</p></div>
-      <div class="tool"><span class="ic">§</span><h3>amend</h3><p class="mut">Apply a regulatory amendment to your manual, with every change presented for review.</p></div>
-      <div class="tool"><span class="ic">▤</span><h3>make_checklist</h3><p class="mut">Turn a tasks document into a working checklist.</p></div>
+      <div class="tool"><span class="ic">❓</span><h3>Ask anything</h3><p class="mut">A question in your own words returns the procedure or limit quoted from your manual, with the document, chapter and page.</p></div>
+      <div class="tool"><span class="ic">📎</span><h3>@your document</h3><p class="mut">Mention a file from your library to scope the next question to that document alone.</p></div>
+      <div class="tool"><span class="ic">🛫</span><h3>@simprep</h3><p class="mut">Turn a sim package — the training-department briefing plus the OFPs — into one cited crew briefing: flight cards, MEL and CDL, OM-A policy, airport briefs, TEM and weather.</p></div>
+      <div class="tool"><span class="ic">📝</span><h3>Answer a test</h3><p class="mut">Drop in a question paper and PilotBrief recognises it, answers every question from your manuals with page references, and exports the result.</p></div>
+      <div class="tool"><span class="ic">🎓</span><h3>Study kit</h3><p class="mut">Briefing decks, quizzes and spaced-repetition flashcards, generated from the documents you actually fly.</p></div>
+      <div class="tool"><span class="ic">🛬</span><h3>Airport &amp; approach brief</h3><p class="mut">One brief built from your manuals with live METAR and TAF and the OFP you drop in — NOTAMs, fuel and MEL included.</p></div>
     </div>
 
-    <div class="audit">
-      <div>
+    <hr style="border:0;border-top:1px solid var(--e-line);margin:4.5rem 0 0">
+
+    <div style="margin-top:4rem">
+      <div class="eyebrow"><i>✈</i> Also for inspectors, quality &amp; operations management</div>
+      <h2 class="h-l" style="margin-top:1.4rem"><span class="dim">Whole manuals,</span><br>audited and amended.</h2>
+      <p class="mut" style="max-width:760px;margin-top:1.8rem">The same engine works on the documents themselves — for the people who write, amend and audit them.</p>
+
+      <div class="credit"><span class="ic">☑</span><div><b>Developed in collaboration with EASA inspectors.</b> The audit and amendment tools follow the way an inspection is actually run and reported.</div></div>
+
+      <div class="toolgrid">
+        <div class="tool"><span class="ic">☑</span><h3>@conformity</h3><p class="mut">Audit one or more documents against a checklist — an EASA or ANAC OM-A checklist, for example — item by item.</p></div>
+        <div class="tool"><span class="ic">▤</span><h3>@make_checklist</h3><p class="mut">Turn a tasks document into a working checklist.</p></div>
+        <div class="tool"><span class="ic">§</span><h3>@amend</h3><p class="mut">Apply a regulatory amendment to your manual, with every change presented for review.</p></div>
+        <div class="tool"><span class="ic">⇄</span><h3>@compare</h3><p class="mut">Compare two documents and see what actually differs between the revisions.</p></div>
+        <div class="tool"><span class="ic">⤴</span><h3>@update</h3><p class="mut">Apply an updates document to a base document and get the updated text back.</p></div>
+      </div>
+
+      <div class="audit">
         <div class="label" style="color:var(--e-blue)">Conformity audit</div>
         <h3 class="h-m" style="margin:.8rem 0 1.4rem">Check the operator's manual against the regulator's checklist.</h3>
         <ul class="steps" style="margin:0">
@@ -608,7 +412,7 @@
           <li>Findings come back as <b>compliant</b>, <b>non-compliant</b> or <b>remarks</b>, with items the app could not determine flagged for your check</li>
           <li>Export the result to <b>Word</b> or <b>PDF</b> when you are done reviewing</li>
         </ul>
-        <p class="fine" style="margin-top:1.6rem"><b>An AI-assisted draft, not a signature.</b> Every finding must be verified against the source document before it is signed, and items the app could not confidently determine are marked for you.</p>
+        <p class="fine" style="margin-top:1.6rem"><b>An AI-assisted draft, not a signature.</b> Every finding must be verified against the source document before it is signed, and items the app could not confidently determine are marked for you. PilotBrief is not endorsed by or affiliated with EASA.</p>
       </div>
     </div>
   </div>
@@ -625,7 +429,7 @@
 <div class="panel">
   <div class="wrap">
     <div class="num">02</div>
-    <h3>Ask in plain English</h3>
+    <h3>Ask in your own words</h3>
     <p class="mut">Type it or speak it, in any of the five interface languages, and read the answer in your manual's own words with the document, chapter and page shown beside it.</p>
   </div>
 </div>
